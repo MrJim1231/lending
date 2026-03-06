@@ -121,24 +121,25 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 350px;
+  margin-top: -20px;
 }
 
 .hero__image-simulator {
   position: absolute;
-  width: 90%;
-  max-width: 280px;
+  width: 105%;
+  max-width: 320px;
   z-index: 2;
-  top: 10%;
-  right: -5%;
+  top: -55px;
+  right: -10%;
   filter: drop-shadow(0 0 30px rgba(0, 153, 255, 0.4));
 }
 
 .hero__image-boy {
   position: absolute;
-  width: 85%;
-  max-width: 260px;
-  left: -5%;
-  bottom: 0;
+  width: 60%;
+  max-width: 180px;
+  left: -2%;
+  top: 40px;
   z-index: 3;
   filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5));
 }

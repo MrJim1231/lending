@@ -31,13 +31,13 @@ body {
 .hero {
   position: relative;
   width: 100%;
-  min-height: 100vh;
+  height: 100vh;
   background-image: url('/first-bg.png');
   background-size: cover;
   background-position: center;
   display: flex;
   flex-direction: column;
-  padding: 20px 16px;
+  padding: 15px 16px 10px;
   overflow: hidden;
 }
 
@@ -120,8 +120,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 350px;
-  margin-top: -20px;
+  margin-top: -30px;
 }
 
 .hero__image-simulator {
@@ -186,10 +185,10 @@ body {
   margin-top: auto;
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 10px;
   z-index: 10;
   background: linear-gradient(to top, rgba(10, 20, 47, 0.95), transparent);
-  padding: 30px 10px 20px;
+  padding: 10px 10px 15px;
   text-align: center;
 }
 
@@ -255,14 +254,14 @@ body {
 }
 
 .price-new {
-  font-size: 42px;
+  font-size: 32px;
   font-weight: 900;
   color: var(--primary-yellow);
   text-shadow: 0 0 20px rgba(255, 230, 0, 0.3);
 }
 
 .price-new span {
-  font-size: 18px;
+  font-size: 14px;
   font-weight: 700;
 }
 
@@ -270,9 +269,9 @@ body {
   background: var(--primary-yellow);
   color: var(--text-black);
   border: none;
-  padding: 20px;
+  padding: 16px;
   border-radius: 50px;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 900;
   box-shadow: 0 10px 30px rgba(255, 230, 0, 0.4);
   cursor: pointer;

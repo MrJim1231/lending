@@ -288,7 +288,7 @@ body {
 .adv-section {
   position: relative;
   width: 100%;
-  min-height: 100vh;
+  height: 100vh;
   padding: 40px 10px 80px;
   background-size: cover;
   background-position: center;
@@ -415,7 +415,7 @@ body {
   width: 155%;
   max-width: 350px;
   position: absolute;
-  top: 10px;
+  top: -60px;
   right: -55px; /* Push image further right, as per screenshot */
   filter: drop-shadow(0 0 40px rgba(0, 153, 255, 0.5));
 }
@@ -423,7 +423,7 @@ body {
 /* Base Gift Block */
 .adv-gift {
   position: absolute;
-  bottom: 0px;
+  bottom: 40px;
   right: 15px;
   padding: 10px 8px;
   width: 155px;
@@ -453,42 +453,12 @@ body {
   margin-top: 5px;
 }
 
-/* --- V1: DARK FLUSH CARDS (MATCHES NEW SCREENSHOT) --- */
-.adv-v1 { background-image: url('/first-bg.png'); }
-.adv-v1::before { content: ''; position: absolute; inset: 0; background: rgba(5, 10, 24, 0.4); }
-.adv-v1 .adv-item {
-  background: rgba(15, 30, 70, 0.95);
-  border: 1px solid rgba(255,255,255,0.05);
-  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-}
-.adv-v1 .adv-gift {
-  background: rgba(15, 30, 70, 0.95);
-  border-radius: 12px;
-  border: 1px solid rgba(255,255,255,0.05);
-  box-shadow: 0 5px 25px rgba(0,0,0,0.8);
-}
-
-/* --- V2: GLASSMORPHISM --- */
-.adv-v2 { background-image: url('/bg-2.png'); }
-.adv-v2::before { content: ''; position: absolute; inset: 0; background: rgba(0, 0, 0, 0.2); }
-.adv-v2 .adv-item {
-  background: rgba(255,255,255,0.05);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255,255,255,0.15);
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-}
-.adv-v2 .adv-gift {
-  background: rgba(255,255,255,0.05);
-  backdrop-filter: blur(10px);
-  border-radius: 20px;
-  border: 1px solid rgba(255,255,255,0.15);
-  box-shadow: 0 5px 25px rgba(0,0,0,0.5);
-}
-
-/* --- V3: CLEAN NEUMORPHIC LINES --- */
+/* --- CHOSEN VARIANT (CLEAN LINES + GLASSMORPHISM GIFT) --- */
 .adv-v3 { background-image: url('/first-bg.png'); filter: contrast(1.05); }
 .adv-v3::before { content: ''; position: absolute; inset: 0; background: rgba(0, 0, 0, 0.6); }
+
 .adv-v3 .adv-list { gap: 20px; }
+
 .adv-v3 .adv-item {
   background: transparent;
   padding: 5px 15px;
@@ -497,32 +467,18 @@ body {
   flex-direction: row;
   align-items: center;
 }
+
 .adv-v3 .icon-wrap { display: none; }
 .adv-v3 .text-wrap h4 { color: var(--primary-yellow); font-size: 12px; }
 .adv-v3 .text-wrap p { font-size: 10px; }
-.adv-v3 .adv-gift {
-  background: #fff;
-  border-radius: 5px;
-}
-.adv-v3 .gift-info h5, .adv-v3 .gift-info p { color: #000; }
 
-/* --- V4: NEON CYBERPUNK BORDERS --- */
-.adv-v4 { background-image: url('/bg-2.png'); }
-.adv-v4::before { content: ''; position: absolute; inset: 0; background: rgba(0, 10, 20, 0.7); }
-.adv-v4 .adv-item {
-  background: rgba(0,0,0,0.6);
-  border: 1px solid var(--primary-yellow);
-  border-radius: 4px;
-  box-shadow: 0 0 10px rgba(255,230,0,0.1) inset;
-  flex-direction: row;
-  align-items: center;
-}
-.adv-v4 .icon-wrap { background: transparent; border: 1px solid var(--primary-yellow); border-radius: 4px; box-shadow: none; }
-.adv-v4 .adv-gift {
-  background: rgba(0,0,0,0.8);
-  border-radius: 0;
-  border: 1px dashed var(--primary-yellow);
-  border-top: 4px solid var(--primary-yellow);
+/* Gift block styling from Version 2 (Glassmorphism) */
+.adv-v3 .adv-gift {
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.15);
+  box-shadow: 0 5px 25px rgba(0,0,0,0.5);
 }
 
 

@@ -1,0 +1,65 @@
+<svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="bg" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
+      gradientTransform="translate(128 128) rotate(90) scale(128)">
+      <stop offset="0%" stop-color="#2F7DFF"/>
+      <stop offset="70%" stop-color="#1E56E6"/>
+      <stop offset="100%" stop-color="#1237A8"/>
+    </radialGradient>
+
+    <linearGradient id="ring" x1="40" y1="40" x2="216" y2="216" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#8ED3FF"/>
+      <stop offset="100%" stop-color="#2D7DFF"/>
+    </linearGradient>
+
+    <linearGradient id="bulb" x1="128" y1="62" x2="128" y2="170" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FFF27A"/>
+      <stop offset="45%" stop-color="#FFD400"/>
+      <stop offset="100%" stop-color="#FFB800"/>
+    </linearGradient>
+
+    <filter id="glowBlue" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="glowYellow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- background -->
+  <circle cx="128" cy="128" r="112" fill="url(#bg)"/>
+  <circle cx="128" cy="128" r="106" stroke="url(#ring)" stroke-width="8" opacity="0.9"/>
+  <circle cx="128" cy="128" r="95" stroke="#8FD3FF" stroke-width="2" opacity="0.2"/>
+
+  <!-- rays -->
+  <g filter="url(#glowYellow)" stroke="#FFD400" stroke-width="8" stroke-linecap="round">
+    <path d="M128 42V60"/>
+    <path d="M77 63L89 75"/>
+    <path d="M179 63L167 75"/>
+    <path d="M56 114H74"/>
+    <path d="M200 114H182"/>
+    <path d="M84 173L95 162"/>
+    <path d="M172 173L161 162"/>
+  </g>
+
+  <!-- bulb -->
+  <g filter="url(#glowYellow)">
+    <path d="M128 66C96 66 74 89 74 119C74 140 85 156 99 168C107 175 111 182 112 190H144C145 182 149 175 157 168C171 156 182 140 182 119C182 89 160 66 128 66Z"
+      fill="url(#bulb)"/>
+    <path d="M106 194H150" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round"/>
+    <path d="M111 208H145" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round"/>
+    <path d="M118 178C121 170 135 170 138 178" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round"/>
+  </g>
+
+  <!-- subtle inner shine -->
+  <circle cx="116" cy="104" r="18" fill="#FFFFFF" opacity="0.18"/>
+</svg>

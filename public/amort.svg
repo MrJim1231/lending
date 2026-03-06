@@ -1,0 +1,52 @@
+<svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="bg" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
+      gradientTransform="translate(128 128) rotate(90) scale(128)">
+      <stop offset="0%" stop-color="#2F7DFF"/>
+      <stop offset="70%" stop-color="#1E56E6"/>
+      <stop offset="100%" stop-color="#1237A8"/>
+    </radialGradient>
+
+    <linearGradient id="ring" x1="40" y1="40" x2="216" y2="216" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#8ED3FF"/>
+      <stop offset="100%" stop-color="#2D7DFF"/>
+    </linearGradient>
+
+    <linearGradient id="padGrad" x1="128" y1="78" x2="128" y2="178" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FFE56A"/>
+      <stop offset="55%" stop-color="#FFD400"/>
+      <stop offset="100%" stop-color="#FFB800"/>
+    </linearGradient>
+
+    <filter id="glow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- background -->
+  <circle cx="128" cy="128" r="112" fill="url(#bg)"/>
+  <circle cx="128" cy="128" r="106" stroke="url(#ring)" stroke-width="8" opacity="0.9"/>
+  <circle cx="128" cy="128" r="95" stroke="#8FD3FF" stroke-width="2" opacity="0.2"/>
+
+  <g filter="url(#glow)">
+    <!-- soft pad -->
+    <path d="M90 106C90 88 104 74 122 74H134C152 74 166 88 166 106V150C166 168 152 182 134 182H122C104 182 90 168 90 150V106Z"
+          fill="url(#padGrad)"/>
+
+    <!-- inner cushion -->
+    <path d="M106 108C106 98 114 90 124 90H132C142 90 150 98 150 108V148C150 158 142 166 132 166H124C114 166 106 158 106 148V108Z"
+          fill="white" opacity="0.18"/>
+
+    <!-- top compressed arcs -->
+    <path d="M78 122C90 108 102 102 118 100" stroke="white" stroke-width="8" stroke-linecap="round"/>
+    <path d="M178 122C166 108 154 102 138 100" stroke="white" stroke-width="8" stroke-linecap="round"/>
+
+    <!-- bottom absorb arcs -->
+    <path d="M78 146C90 160 102 166 118 168" stroke="white" stroke-width="8" stroke-linecap="round"/>
+    <path d="M178 146C166 160 154 166 138 168" stroke="white" stroke-width="8" stroke-linecap="round"/>
+  </g>
+</svg>

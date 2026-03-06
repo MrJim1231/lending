@@ -283,3 +283,136 @@ body {
 .hero__btn:active {
   transform: scale(0.98);
 }
+
+/* Advantages Section */
+.advantages {
+  position: relative;
+  width: 100%;
+  padding: 40px 16px 20px;
+  background-image: url('/bg-2.png');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.advantages__header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.advantages__title-white, .advantages__title-yellow {
+  font-size: 20px;
+  font-weight: 900;
+  line-height: 1.2;
+}
+
+.advantages__title-yellow {
+  color: var(--primary-yellow);
+}
+
+.advantages__badge {
+  background: white;
+  color: var(--bg-deep-blue);
+  padding: 6px 15px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 900;
+  width: fit-content;
+  margin: 12px auto 0;
+}
+
+.advantages__layout {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  flex: 1;
+}
+
+.advantages__list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  flex: 1;
+}
+
+.advantages__item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.advantages__icon {
+  width: 36px;
+  height: 36px;
+  background: var(--primary-yellow);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 0 10px rgba(255, 230, 0, 0.4);
+}
+
+.advantages__icon img {
+  width: 18px;
+  height: 18px;
+}
+
+.advantages__text h3 {
+  font-size: 12px;
+  font-weight: 900;
+  color: var(--primary-yellow);
+  line-height: 1;
+}
+
+.advantages__text p {
+  font-size: 10px;
+  color: #DDD;
+  margin-top: 2px;
+}
+
+.advantages__imagery {
+  flex: 0 0 45%;
+  position: relative;
+}
+
+.advantages__simulator-v2 {
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 0 30px rgba(0, 153, 255, 0.4));
+  position: sticky;
+  top: 100px;
+}
+
+.advantages__gift {
+  background: rgba(10, 20, 47, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.advantages__gift img {
+  width: 60px;
+  height: auto;
+}
+
+.advantages__gift-badge h4 {
+  font-size: 14px;
+  font-weight: 900;
+  color: #FFF;
+}
+
+.advantages__gift-badge .yellow {
+  color: var(--primary-yellow);
+}
+
+.advantages__gift-badge p {
+  font-size: 11px;
+  color: #CCC;
+}

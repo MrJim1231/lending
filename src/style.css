@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700;900&display=swap');
+
+:root {
+  --primary-yellow: #FFE600;
+  --bg-deep-blue: #0A142F;
+  --text-white: #FFFFFF;
+  --text-black: #000000;
+  --font-main: 'Outfit', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--bg-deep-blue);
+  color: var(--text-white);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+#app {
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* Hero Section Styles */
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background-image: url('/first-bg.png');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 16px;
+  overflow: hidden;
+}
+
+/* Header & Title */
+.hero__header {
+  z-index: 10;
+  margin-bottom: 20px;
+}
+
+.hero__title {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.hero__title-small {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  line-height: 1;
+  text-shadow: 0 4px 8px rgba(0,0,0,0.5);
+}
+
+.hero__title-big {
+  font-size: 42px;
+  font-weight: 900;
+  color: var(--primary-yellow);
+  line-height: 0.9;
+  text-shadow: 0 4px 12px rgba(0,0,0,0.6);
+}
+
+.hero__badge-row {
+  margin-top: 15px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.hero__badge-yellow {
+  background-color: var(--primary-yellow);
+  color: var(--text-black);
+  padding: 6px 12px;
+  font-weight: 900;
+  font-size: 14px;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+.hero__badge-bluetooth {
+  background: white;
+  padding: 8px 12px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.hero__badge-bluetooth img {
+  width: 24px;
+  height: 24px;
+}
+
+.hero__badge-bluetooth span {
+  color: var(--bg-deep-blue);
+  font-size: 11px;
+  font-weight: 900;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+/* Imagery */
+.hero__imagery {
+  position: relative;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 350px;
+}
+
+.hero__image-simulator {
+  position: absolute;
+  width: 90%;
+  max-width: 280px;
+  z-index: 2;
+  top: 10%;
+  right: -5%;
+  filter: drop-shadow(0 0 30px rgba(0, 153, 255, 0.4));
+}
+
+.hero__image-boy {
+  position: absolute;
+  width: 85%;
+  max-width: 260px;
+  left: -5%;
+  bottom: 0;
+  z-index: 3;
+  filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5));
+}
+
+.hero__badge-gloves {
+  position: absolute;
+  right: 10px;
+  bottom: 0px;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.hero__badge-gloves > img {
+  width: 90px;
+  height: auto;
+  order: 2;
+}
+
+.hero__badge-gloves-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  font-weight: 900;
+  font-size: 14px;
+  line-height: 1.1;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+  pointer-events: none;
+  text-transform: uppercase;
+  order: 1;
+}
+
+.hero__badge-gloves-text span {
+  color: #FFFFFF;
+}
+
+.hero__badge-gloves-text .yellow {
+  color: var(--primary-yellow);
+}
+
+/* Features List */
+.hero__features {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 10;
+  background: linear-gradient(to top, rgba(10, 20, 47, 0.8), transparent);
+  padding: 20px 0;
+}
+
+.hero__feature {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.hero__feature img {
+  width: 32px;
+  height: 32px;
+  background: rgba(255,255,255,0.1);
+  padding: 6px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+.hero__feature span {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}

@@ -1,0 +1,42 @@
+<svg width="256" height="256" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="bg3" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#2F7DFF"/>
+      <stop offset="70%" stop-color="#1E56E6"/>
+      <stop offset="100%" stop-color="#1237A8"/>
+    </radialGradient>
+
+    <filter id="glow3" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- background -->
+  <circle cx="128" cy="128" r="112" fill="url(#bg3)"/>
+
+  <!-- light bulb -->
+  <g filter="url(#glow3)">
+    <path d="M128 58
+             C97 58 74 81 74 112
+             C74 132 84 147 98 160
+             C107 168 112 178 112 188
+             H144
+             C144 178 149 168 158 160
+             C172 147 182 132 182 112
+             C182 81 159 58 128 58Z"
+          fill="#FFD400"/>
+
+    <rect x="110" y="188" width="36" height="14" rx="7" fill="white"/>
+    <rect x="114" y="204" width="28" height="10" rx="5" fill="white"/>
+
+    <path d="M108 116C108 105 116 96 128 96C140 96 148 105 148 116"
+          fill="none" stroke="white" stroke-width="8" stroke-linecap="round"/>
+
+    <path d="M128 34V52M67 59L79 71M189 59L177 71M52 117H70M204 117H186"
+          stroke="white" stroke-width="8" stroke-linecap="round"/>
+  </g>
+</svg>

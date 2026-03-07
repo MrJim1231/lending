@@ -1198,28 +1198,63 @@ body {
   .hero__image-boy {
     position: absolute;
     width: auto;
-    height: 180%;
+    height: 170%;
     max-width: none;
-    left: 5%;
-    bottom: -10%;
+    left: 8%;
+    bottom: -15%;
     top: auto;
     transform: none;
     z-index: 3;
     filter: drop-shadow(0 20px 40px rgba(0,0,0,0.6)) !important;
   }
 
-  /* Simulator — anchored to right side */
+  /* Simulator — larger and with glow */
   .hero__image-simulator {
     position: absolute;
     width: auto;
-    height: 90%;
+    height: 140%;
     max-width: none;
-    right: 0;
+    right: 5%;
     left: auto;
     top: 50%;
-    transform: translateY(-50%);
+    transform: translateY(-50%) rotate(-5deg);
     z-index: 4;
-    filter: none !important;
+    filter: drop-shadow(0 0 30px rgba(0, 153, 255, 0.4)) drop-shadow(0 0 60px rgba(0, 153, 255, 0.2)) !important;
+  }
+
+  /* Energy glow behind simulator */
+  .hero__imagery::after {
+    content: '';
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(0, 153, 255, 0.15) 0%, transparent 70%);
+    right: -100px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  /* Neon Ring Effect */
+  .hero__imagery::before {
+    content: '';
+    position: absolute;
+    width: 450px;
+    height: 450px;
+    border: 2px solid rgba(0, 153, 255, 0.3);
+    border-radius: 50%;
+    right: -50px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    box-shadow: 0 0 20px rgba(0, 153, 255, 0.2), inset 0 0 20px rgba(0, 153, 255, 0.2);
+    animation: pulse-ring 4s infinite ease-in-out;
+  }
+
+  @keyframes pulse-ring {
+    0%, 100% { transform: translateY(-50%) scale(1); opacity: 0.3; }
+    50% { transform: translateY(-50%) scale(1.05); opacity: 0.6; }
   }
 
   /* Gloves badge — center-bottom of imagery */

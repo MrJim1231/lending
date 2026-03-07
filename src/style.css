@@ -144,7 +144,7 @@ body {
   width: 105%;
   max-width: 320px;
   z-index: 2;
-  top: -55px;
+  top: -15px; /* Moved lower from -55px */
   right: -10%;
   filter: none;
 }
@@ -164,7 +164,7 @@ body {
   right: 10px;
   bottom: 0px;
   z-index: 5;
-  display: flex;
+  display: none; /* Hidden on mobile by default */
   flex-direction: column;
   align-items: center;
   gap: 0px;
@@ -1276,6 +1276,7 @@ body {
     right: auto;
     transform: translateX(-50%) rotate(10deg);
     z-index: 6;
+    display: flex; /* Visible on desktop */
   }
   .hero__badge-gloves > img { width: 80px; }
 

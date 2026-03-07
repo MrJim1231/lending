@@ -730,3 +730,102 @@ body {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
   margin-bottom: 10px;
 }
+
+/* --- REVIEWS SECTION --- */
+.reviews-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.reviews-slider {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 0 15px;
+  position: relative;
+  z-index: 5; /* Fixed the dark overlay issue */
+  box-sizing: border-box;
+}
+
+.reviews-slider::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
+}
+
+.review-card {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  display: flex;
+  flex-direction: column;
+}
+
+.review-card:nth-child(even) {
+  background: rgba(0, 153, 255, 0.05);
+  border: 1px solid rgba(0, 153, 255, 0.2);
+}
+
+.review-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  padding-bottom: 8px;
+}
+
+.reviewer-avatar {
+  width: 38px;
+  height: 38px;
+  background: var(--primary-yellow);
+  color: var(--text-black);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 900;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+.reviewer-info {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.reviewer-info h6 {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.stars {
+  color: var(--primary-yellow);
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+.review-card p {
+  color: #d1d8e0;
+  font-size: 12px;
+  line-height: 1.4;
+  margin-bottom: 10px;
+  flex-grow: 1;
+}
+
+.review-date {
+  font-size: 11px;
+  color: #777;
+  text-align: right;
+  text-transform: uppercase;
+  font-weight: 700;
+}

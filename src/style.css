@@ -1152,7 +1152,7 @@ body {
     height: 100dvh;
     gap: 0;
     background-image: url('/bg-desktop.png');
-    overflow: visible; /* Prevent clipping of large elements like the boy */
+    overflow: hidden; /* Strictly keep all elements within the first screen */
   }
 
   /* All rows centered and capped at 1200px */
@@ -1198,63 +1198,60 @@ body {
   .hero__image-boy {
     position: absolute;
     width: auto;
-    height: 170%;
+    height: 135%;
     max-width: none;
-    left: 8%;
-    bottom: -15%;
+    left: 5%;
+    bottom: -10px;
     top: auto;
     transform: none;
-    z-index: 3;
+    z-index: 5; /* Now on top of the simulator */
     filter: drop-shadow(0 20px 40px rgba(0,0,0,0.6)) !important;
   }
 
-  /* Simulator — larger and with glow */
   .hero__image-simulator {
     position: absolute;
-    width: auto;
-    height: 140%;
-    max-width: none;
-    right: 5%;
-    left: auto;
-    top: 50%;
-    transform: translateY(-50%) rotate(-5deg);
-    z-index: 4;
-    filter: drop-shadow(0 0 30px rgba(0, 153, 255, 0.4)) drop-shadow(0 0 60px rgba(0, 153, 255, 0.2)) !important;
-  }
-
-  /* Energy glow behind simulator */
-  .hero__imagery::after {
-    content: '';
-    position: absolute;
     width: 600px;
-    height: 600px;
-    background: radial-gradient(circle, rgba(0, 153, 255, 0.15) 0%, transparent 70%);
-    right: -100px;
+    height: auto;
+    max-width: none;
+    left: 22%; /* Significant overlap with boy */
     top: 50%;
     transform: translateY(-50%);
-    z-index: 2;
-    pointer-events: none;
+    z-index: 4;
+    filter: drop-shadow(0 0 30px rgba(0, 153, 255, 0.4)) !important;
+    object-fit: contain;
   }
 
-  /* Neon Ring Effect */
+  /* Neon Ring and Glow (Desktop Only) */
   .hero__imagery::before {
     content: '';
     position: absolute;
-    width: 450px;
-    height: 450px;
-    border: 2px solid rgba(0, 153, 255, 0.3);
+    width: 420px;
+    height: 420px;
+    border: 2px solid rgba(0, 153, 255, 0.2);
     border-radius: 50%;
-    right: -50px;
+    left: 24%; /* Shifted with simulator */
     top: 50%;
     transform: translateY(-50%);
-    z-index: 1;
-    box-shadow: 0 0 20px rgba(0, 153, 255, 0.2), inset 0 0 20px rgba(0, 153, 255, 0.2);
+    box-shadow: 0 0 40px rgba(0, 153, 255, 0.1);
     animation: pulse-ring 4s infinite ease-in-out;
+    z-index: 1;
+  }
+
+  .hero__imagery::after {
+    content: '';
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(0, 153, 255, 0.1) 0%, transparent 75%);
+    left: 19%; /* Shifted with simulator */
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
   }
 
   @keyframes pulse-ring {
-    0%, 100% { transform: translateY(-50%) scale(1); opacity: 0.3; }
-    50% { transform: translateY(-50%) scale(1.05); opacity: 0.6; }
+    0%, 100% { transform: translateY(-50%) scale(1); opacity: 0.2; }
+    50% { transform: translateY(-50%) scale(1.03); opacity: 0.4; }
   }
 
   /* Gloves badge — center-bottom of imagery */
@@ -1268,53 +1265,77 @@ body {
   }
   .hero__badge-gloves > img { width: 80px; }
 
-  /* ROW 3: CTA bar */
+  /* Floating CTA Card on the Right */
   .hero__cta {
-    flex-shrink: 0;
-    flex-direction: row;
+    position: absolute;
+    right: 40px;
+    top: 215px; /* Fits mockup spacing */
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(25px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 40px 30px;
+    border-radius: 50px;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.5);
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    gap: 20px;
-    padding: 16px 40px 24px;
-    background: linear-gradient(to top, rgba(10,20,47,1) 70%, rgba(10,20,47,0.5));
+    gap: 30px;
+    width: 320px;
+    text-align: center;
     margin: 0;
-    border-radius: 0;
-    border: none;
-    backdrop-filter: none;
-    z-index: 10;
+  }
+
+  .hero__price {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    margin: 0;
+    order: 1; /* First in floating CTA */
+  }
+
+  .price-old { font-size: 20px; color: #ccc; opacity: 0.7; margin-bottom: 2px; }
+  .price-new { 
+    font-size: 60px; 
+    line-height: 1; 
+    font-weight: 900; 
+    color: var(--primary-yellow);
+    text-shadow: 0 0 20px rgba(255, 230, 0, 0.2);
   }
 
   .hero__timer {
+    display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    gap: 6px;
+    align-items: center;
+    gap: 12px;
+    order: 2; /* Second in floating CTA */
   }
 
-  .hero__timer-label { font-size: 12px; color: #aaa; }
-  .hero__timer-clock { gap: 8px; justify-content: flex-start; }
-  .timer-item span   { font-size: 24px; }
-
-  .hero__price {
-    margin: 0;
-    gap: 20px;
-    justify-content: center;
-    align-items: baseline;
+  .hero__timer-label { font-size: 11px; color: #fff; opacity: 0.7; letter-spacing: 0.8px; }
+  .hero__timer-clock { gap: 10px; }
+  .timer-item { 
+    background: rgba(255, 255, 255, 0.08); 
+    padding: 10px 14px; 
+    border-radius: 12px; 
+    min-width: 65px; 
   }
-
-  .price-old { font-size: 20px; }
-  .price-new { font-size: 38px; }
+  .timer-item span { font-size: 26px; color: #fff; letter-spacing: 0; }
+  .timer-item small { display: block; font-size: 9px; margin-top: 2px; opacity: 0.6; }
 
   .hero__btn {
-    width: auto;
-    white-space: nowrap;
-    padding: 16px 50px;
+    width: 100%;
+    padding: 22px;
     font-size: 18px;
+    border-radius: 60px;
+    background: var(--primary-yellow);
+    color: #000;
+    box-shadow: 0 10px 30px rgba(255, 230, 0, 0.3);
+    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    order: 3; /* Last in floating CTA */
   }
 
-  .timer-item span { font-size: 28px; }
-  .price-old       { font-size: 24px; }
-  .price-new       { font-size: 42px; }
-  .hero__btn       { font-size: 20px; padding: 18px; }
+  .hero__btn:hover { transform: scale(1.04); }
 
   /* --- ADVANTAGES (Screen 2) --- */
   .adv-section { padding: 60px 80px; }

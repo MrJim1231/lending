@@ -707,10 +707,13 @@ body {
   font-weight: 500;
 }
 
-.bundle-list img {
+.bundle-list .bundle-icon {
+  font-size: 16px;
+  color: var(--primary-yellow);
+  filter: drop-shadow(0 0 5px rgba(255, 230, 0, 0.6));
   width: 20px;
-  height: 20px;
-  filter: drop-shadow(0 0 5px var(--primary-yellow));
+  text-align: center;
+  flex-shrink: 0;
 }
 
 /* --- HOW IT WORKS SECTION (WORK SECTION) --- */

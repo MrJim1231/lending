@@ -537,15 +537,6 @@ body {
   z-index: 5;
 }
 
-.specs-header .title-white {
-  font-size: 18px;
-}
-
-.specs-header .title-yellow {
-  font-size: 20px;
-  margin-top: 2px;
-}
-
 .specs-container {
   display: flex;
   flex-direction: column; /* Stacked layout for mobile */
@@ -567,8 +558,8 @@ body {
 }
 
 .specs-img {
-  width: 80%;
-  max-width: 250px;
+  width: 90%;
+  max-width: 300px;
   border-radius: 16px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -732,8 +723,8 @@ body {
 }
 
 .work-img {
-  width: 100%;
-  max-width: 250px;
+  width: 90%;
+  max-width: 300px;
   border-radius: 16px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);

@@ -146,7 +146,7 @@ body {
   z-index: 2;
   top: -55px;
   right: -10%;
-  filter: drop-shadow(0 0 30px rgba(0, 153, 255, 0.4));
+  filter: none;
 }
 
 .hero__image-boy {
@@ -435,7 +435,7 @@ body {
   position: absolute;
   top: -60px;
   right: -55px; /* Push image further right, as per screenshot */
-  filter: drop-shadow(0 0 40px rgba(0, 153, 255, 0.5));
+  filter: none;
 }
 
 /* Base Gift Block */
@@ -1117,4 +1117,289 @@ body {
 .footer__link:hover {
   color: var(--primary-yellow);
   border-color: var(--primary-yellow);
+}
+
+/* =============================================
+   DESKTOP ADAPTATION (min-width: 768px)
+   Mobile styles are the default above.
+   Desktop overrides are below.
+   ============================================= */
+@media (min-width: 768px) {
+
+  /* --- GLOBAL: disable snap, allow free scroll on desktop --- */
+  html {
+    scroll-snap-type: none;
+  }
+
+  .hero,
+  .adv-section,
+  .specs-section,
+  .video-section,
+  .order-section {
+    scroll-snap-align: unset;
+    scroll-snap-stop: unset;
+    height: auto;
+    min-height: 100vh;
+  }
+
+  /* === HERO DESKTOP: 1200px container, 3 rows === */
+  .hero {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0;
+    height: 100vh;
+    height: 100dvh;
+    gap: 0;
+  }
+
+  /* All rows centered and capped at 1200px */
+  .hero__header,
+  .hero__imagery,
+  .hero__cta {
+    width: 100%;
+    max-width: 1200px;
+    box-sizing: border-box;
+  }
+
+  /* ROW 1: Title + badges */
+  .hero__header {
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding: 30px 40px 20px;
+    margin-bottom: 0;
+    z-index: 10;
+    gap: 20px;
+  }
+
+  .hero__title { gap: 4px; }
+  .hero__title-small { font-size: 36px; line-height: 1; }
+  .hero__title-big   { font-size: 40px; white-space: normal; }
+
+  .hero__badge-row {
+    margin-top: 0;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+  }
+
+  /* ROW 2: Boy (left) + Simulator (right) */
+  .hero__imagery {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    display: block;
+    margin: 0;
+  }
+
+  .hero__image-boy {
+    position: absolute;
+    width: auto;
+    height: 105%;
+    max-width: none;
+    left: 0;
+    bottom: 0;
+    top: auto;
+    transform: none;
+    z-index: 3;
+    filter: none !important;
+  }
+
+  /* Simulator — anchored to right side */
+  .hero__image-simulator {
+    position: absolute;
+    width: auto;
+    height: 90%;
+    max-width: none;
+    right: 0;
+    left: auto;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 4;
+    filter: none !important;
+  }
+
+  /* Gloves badge — center-bottom of imagery */
+  .hero__badge-gloves {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%) rotate(10deg);
+    z-index: 6;
+  }
+  .hero__badge-gloves > img { width: 80px; }
+
+  /* ROW 3: CTA bar */
+  .hero__cta {
+    flex-shrink: 0;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 16px 40px 24px;
+    background: linear-gradient(to top, rgba(10,20,47,1) 70%, rgba(10,20,47,0.5));
+    margin: 0;
+    border-radius: 0;
+    border: none;
+    backdrop-filter: none;
+    z-index: 10;
+  }
+
+  .hero__timer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .hero__timer-label { font-size: 12px; color: #aaa; }
+  .hero__timer-clock { gap: 8px; justify-content: flex-start; }
+  .timer-item span   { font-size: 24px; }
+
+  .hero__price {
+    margin: 0;
+    gap: 20px;
+    justify-content: center;
+    align-items: baseline;
+  }
+
+  .price-old { font-size: 20px; }
+  .price-new { font-size: 38px; }
+
+  .hero__btn {
+    width: auto;
+    white-space: nowrap;
+    padding: 16px 50px;
+    font-size: 18px;
+  }
+
+  .timer-item span { font-size: 28px; }
+  .price-old       { font-size: 24px; }
+  .price-new       { font-size: 42px; }
+  .hero__btn       { font-size: 20px; padding: 18px; }
+
+  /* --- ADVANTAGES (Screen 2) --- */
+  .adv-section { padding: 60px 80px; }
+
+  .title-white  { font-size: 30px; }
+  .title-yellow { font-size: 36px; }
+
+  .adv-container {
+    height: auto;
+    gap: 40px;
+    align-items: center;
+  }
+
+  .adv-list { width: 40%; gap: 25px; }
+
+  .adv-v3 .text-wrap h4 { font-size: 15px; }
+  .adv-v3 .text-wrap p  { font-size: 13px; }
+
+  .adv-visuals {
+    position: relative;
+    right: unset;
+    width: 55%;
+    height: 500px;
+  }
+
+  .sim-img {
+    width: 100%;
+    max-width: 500px;
+    top: -40px;
+    right: 0;
+  }
+
+  .adv-gift { bottom: 20px; right: 20px; width: 180px; }
+
+  /* --- SPECS (Screens 3 & 4) --- */
+  .specs-section { padding: 60px 80px; }
+
+  .specs-container {
+    flex-direction: row;
+    align-items: center;
+    gap: 40px;
+    max-width: 1100px;
+  }
+
+  .specs-visuals { flex: 1; }
+
+  .specs-img {
+    width: 100%;
+    max-width: 450px;
+    border-radius: 24px;
+  }
+
+  .specs-content { flex: 1; }
+
+  .specs-box    { padding: 25px 30px; }
+  .specs-title  { font-size: 16px; margin-bottom: 16px; }
+  .specs-list li { font-size: 14px; }
+  .bundle-list li { font-size: 15px; gap: 12px; }
+  .bundle-list .bundle-icon { font-size: 20px; }
+
+  /* --- HOW IT WORKS (Screen 6) --- */
+  .work-section .specs-container {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 50px;
+  }
+
+  .work-steps  { gap: 20px; }
+  .work-step   { padding: 16px 20px; }
+  .step-number { width: 55px; height: 55px; font-size: 24px; }
+  .step-text h5 { font-size: 16px; }
+  .step-text p  { font-size: 13px; }
+  .work-img    { max-width: 420px; }
+
+  /* --- VIDEO (Screen 5) --- */
+  .video-section { padding: 60px 80px; min-height: 100vh; }
+  .video-wrapper { max-width: 800px; height: 65vh; }
+
+  /* --- REVIEWS (Screen 7) --- */
+  .reviews-section { padding: 60px 80px; min-height: auto; }
+
+  .reviews-slider {
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 1100px;
+    gap: 20px;
+    padding: 0;
+  }
+
+  .review-card {
+    flex: 1 1 calc(33% - 20px);
+    min-width: 250px;
+  }
+
+  /* --- ORDER FORM (Screen 8) --- */
+  .order-section { padding: 60px 40px; }
+
+  .order-section .specs-header,
+  .order-section .order-form {
+    max-width: 600px;
+  }
+
+  .order-form {
+    padding: 30px 35px;
+    gap: 16px;
+  }
+
+  .form-group input[type="text"],
+  .form-group input[type="tel"],
+  .form-group textarea {
+    font-size: 15px;
+    padding: 14px;
+  }
+
+  /* Hero copy (Screen 7 bottom CTA) */
+  .hero--bottom {
+    flex-direction: row;
+    align-items: center;
+    gap: 40px;
+    padding: 40px 80px;
+    height: auto;
+    min-height: 100vh;
+  }
+
 }

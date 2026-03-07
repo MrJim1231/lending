@@ -162,7 +162,7 @@ body {
 .hero__badge-gloves {
   position: absolute;
   right: 0;   /* Exactly at the right edge */
-  top: calc(32% + 40px);   /* Lowered by 40px */
+  top: calc(32% + 70px);   /* Lowered by 70px (40 + 30) */
   z-index: 10;
   display: flex;
   flex-direction: column;

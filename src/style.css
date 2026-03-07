@@ -1731,12 +1731,15 @@ body {
   /* Promo Bottom Desktop */
   .promo-bottom {
     background-image: url('/bg-desktop.png');
-    min-height: 100vh;
-    height: auto;
+    height: 100vh; /* Strictly 100vh */
+    max-height: 100vh;
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
-    padding: 20px 0;
+    padding: 0;
+    gap: 0;
+    overflow: hidden;
   }
 
   .promo-bottom::after {
@@ -1749,14 +1752,18 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     position: relative;
+    box-sizing: border-box;
   }
 
   .promo-bottom__header {
     display: flex;
-    justify-content: space-between;
+    flex-direction: row;
     align-items: center;
-    margin-bottom: 40px;
+    justify-content: space-between;
+    padding: 20px 0;
+    margin-bottom: 0;
     z-index: 10;
+    gap: 20px;
   }
 
   .promo-bottom__title-small { font-size: 36px; }
@@ -1784,7 +1791,6 @@ body {
   .promo-bottom__imagery {
     flex: 1;
     display: block;
-    height: 600px;
     overflow: visible;
     z-index: 1;
   }

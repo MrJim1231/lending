@@ -1270,13 +1270,7 @@ body {
 
   /* Gloves badge — center-bottom of imagery */
   .hero__badge-gloves {
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    right: auto;
-    transform: translateX(-50%) rotate(10deg);
-    z-index: 6;
-    display: flex; /* Visible on desktop */
+    display: none; /* Removed from desktop as requested */
   }
   .hero__badge-gloves > img { width: 80px; }
 

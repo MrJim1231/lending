@@ -1283,12 +1283,12 @@ body {
   .hero__cta {
     position: absolute;
     right: 0; /* Perfectly aligned to the 1200px container edge */
-    top: 58%;
+    top: 56%; /* Raised slightly from 58% */
     transform: translateY(-50%);
     background: rgba(255, 255, 255, 0.06);
     backdrop-filter: blur(25px);
     border: 1px solid rgba(255, 255, 255, 0.2);
-    padding: 40px 30px;
+    padding: 40px 30px 30px;
     border-radius: 50px;
     box-shadow: 0 25px 60px rgba(0,0,0,0.5);
     z-index: 20;

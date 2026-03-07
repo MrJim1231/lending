@@ -47,6 +47,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (remaining > 0) {
       setTimeout(updateTimers, 1000);
+    } else {
+      // Якщо таймер дійшов до 0 — перезапускаємо його автоматично
+      endTime = Date.now() + TIMER_DURATION * 1000;
+      localStorage.setItem(TIMER_KEY, endTime);
+      setTimeout(updateTimers, 1000); // Продовжуємо цикл
     }
   }
 

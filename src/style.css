@@ -161,19 +161,35 @@ body {
 
 .hero__badge-gloves {
   position: absolute;
-  right: 10px;
-  bottom: 0px;
-  z-index: 5;
-  display: none; /* Hidden on mobile by default */
+  right: 0;   /* Exactly at the right edge */
+  top: 32%;   /* Higher up */
+  z-index: 10;
+  display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0px;
-  transform: rotate(15deg);
+  transform: rotate(20deg); /* Rotated to the right by 20 degrees */
+  pointer-events: none;
+}
+
+.hero__badge-gloves::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80px;
+  height: 80px;
+  background: var(--primary-yellow);
+  /* Complex starburst shape with many points */
+  clip-path: polygon(50% 0%, 54% 19%, 69% 10%, 65% 28%, 84% 23%, 72% 39%, 93% 43%, 74% 54%, 88% 71%, 69% 68%, 73% 89%, 56% 77%, 50% 98%, 44% 77%, 27% 89%, 31% 68%, 12% 71%, 26% 54%, 7% 43%, 28% 39%, 16% 23%, 35% 28%, 31% 10%, 46% 19%);
+  z-index: -1;
+  filter: drop-shadow(0 0 10px rgba(255, 230, 0, 0.5));
 }
 
 .hero__badge-gloves > img {
-  width: 80px;
+  width: 75px;
   height: auto;
+  filter: drop-shadow(0 5px 15px rgba(0,0,0,0.4));
 }
 
 .hero__badge-gloves-text {
@@ -181,12 +197,13 @@ body {
   flex-direction: column;
   align-items: center;
   font-weight: 900;
-  font-size: 12px;
-  line-height: 1.2;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
-  pointer-events: none;
+  font-size: 13px;
+  line-height: 1;
+  text-shadow: 2px 2px 6px rgba(0,0,0,1);
   text-transform: uppercase;
-  margin-top: 5px;
+  margin-top: -5px;
+  text-align: center;
+  width: 100px;
 }
 
 .hero__badge-gloves-text span {
@@ -199,13 +216,16 @@ body {
 
 /* CTA Block */
 .hero__cta {
-  margin-top: auto;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
   display: flex;
   flex-direction: column;
   gap: 10px;
   z-index: 10;
   background: linear-gradient(to top, rgba(10, 20, 47, 0.95), transparent);
-  padding: 10px 10px 30px;
+  padding: 20px 16px 35px;
   text-align: center;
 }
 

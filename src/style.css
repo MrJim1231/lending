@@ -33,7 +33,7 @@ body {
 }
 
 /* Hero Section Styles */
-.hero {
+.hero, .footer {
   position: relative;
   width: 100%;
   height: 100vh;
@@ -47,6 +47,11 @@ body {
   flex-direction: column;
   padding: 15px 16px 15px;
   overflow: hidden;
+}
+
+/* Footer specific override so it always expands to cover the full viewport */
+.footer {
+  height: 100vh;
 }
 
 /* Header & Title */

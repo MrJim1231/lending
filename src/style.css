@@ -1119,6 +1119,141 @@ body {
   border-color: var(--primary-yellow);
 }
 
+/* --- PROMO BOTTOM SECTION (MOBIle) --- */
+.promo-bottom {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  background-image: url('/first-bg.png');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  padding: 15px 16px 15px;
+  overflow: hidden;
+}
+
+.promo-bottom::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 20, 47, 0.4);
+  z-index: 1;
+}
+
+.promo-bottom__header {
+  position: relative;
+  z-index: 10;
+  margin-bottom: 10px;
+}
+
+.promo-bottom__title {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.promo-bottom__title-small {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.promo-bottom__title-big {
+  font-size: 20px;
+  font-weight: 900;
+  color: var(--primary-yellow);
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.promo-bottom__badge-row {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.promo-bottom__badge-yellow {
+  background: var(--primary-yellow);
+  color: #000;
+  padding: 6px 10px;
+  font-size: 10px;
+  font-weight: 900;
+  border-radius: 4px;
+}
+
+.promo-bottom__badge-bluetooth {
+  background: #fff;
+  padding: 6px 10px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #000;
+}
+
+.promo-bottom__bluetooth-icon { font-size: 18px; }
+.promo-bottom__badge-bluetooth span { font-size: 9px; font-weight: 900; line-height: 1.1; }
+
+.promo-bottom__imagery {
+  position: relative;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+.promo-bottom__image-simulator {
+  position: absolute;
+  width: 105%;
+  max-width: 300px;
+  right: -10%;
+  top: 0;
+}
+
+.promo-bottom__image-boy {
+  position: absolute;
+  width: 105%;
+  left: -15%;
+  top: 0;
+  filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5));
+}
+
+.promo-bottom__cta {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(10, 20, 47, 0.95), transparent);
+  padding: 20px 15px 35px;
+  text-align: center;
+  z-index: 10;
+}
+
+.promo-bottom__timer { display: flex; flex-direction: column; gap: 8px; margin-bottom: 10px; }
+.promo-bottom__timer-label { font-size: 12px; color: #ccc; text-transform: uppercase; }
+.promo-bottom__timer-clock { display: flex; justify-content: center; gap: 8px; }
+
+.promo-bottom__price { display: flex; justify-content: center; align-items: baseline; gap: 15px; margin-bottom: 10px; }
+.promo-bottom__price .price-old { font-size: 18px; color: #888; text-decoration: line-through; }
+.promo-bottom__price .price-new { font-size: 28px; color: var(--primary-yellow); font-weight: 900; }
+
+.promo-bottom__btn {
+  background: var(--primary-yellow);
+  color: #000;
+  border: none;
+  width: 100%;
+  padding: 16px;
+  border-radius: 50px;
+  font-size: 18px;
+  font-weight: 900;
+  box-shadow: 0 10px 20px rgba(255, 230, 0, 0.3);
+}
+
 /* =============================================
    DESKTOP ADAPTATION (min-width: 768px)
    Mobile styles are the default above.
@@ -1571,13 +1706,69 @@ body {
     padding: 14px;
   }
 
-  /* Hero copy (Screen 7 bottom CTA) should match screen 1 */
-  .hero--bottom {
+  /* Promo Bottom Desktop */
+  .promo-bottom {
     background-image: url('/bg-desktop.png');
     min-height: 100vh;
     height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+  }
+
+  .promo-bottom__header,
+  .promo-bottom__imagery {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
     position: relative;
-    overflow: hidden;
+  }
+
+  .promo-bottom__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    z-index: 10;
+  }
+
+  .promo-bottom__title-small { font-size: 36px; }
+  .promo-bottom__title-big   { font-size: 40px; }
+
+  .promo-bottom__imagery {
+    flex: 1;
+    display: block;
+    height: 600px;
+  }
+
+  .promo-bottom__image-boy {
+    height: 600px;
+    width: auto;
+    left: 0;
+    top: auto;
+    bottom: 0;
+  }
+
+  .promo-bottom__image-simulator {
+    width: 550px;
+    left: 15%;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .promo-bottom__cta {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    bottom: auto;
+    transform: translateY(-50%);
+    width: 320px;
+    background: rgba(255,255,255,0.06);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 40px;
+    padding: 40px 30px;
   }
 
 }

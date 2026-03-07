@@ -164,7 +164,7 @@ body {
   right: 0;   /* Exactly at the right edge */
   top: calc(32% + 70px);   /* Lowered by 70px (40 + 30) */
   z-index: 10;
-  display: flex;
+  display: none; /* Hidden on mobile by user request */
   flex-direction: column;
   align-items: center;
   transform: rotate(20deg); /* Rotated to the right by 20 degrees */

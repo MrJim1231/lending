@@ -1157,10 +1157,11 @@ body {
 
   /* All rows centered and capped at 1200px */
   .hero__header,
-  .hero__imagery,
-  .hero__cta {
+  .hero__imagery {
     width: 100%;
     max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
     box-sizing: border-box;
   }
 
@@ -1168,9 +1169,9 @@ body {
   .hero__header {
     display: flex;
     flex-direction: row;
-    align-items: center; /* Ensures title and badges are on the same horizontal level */
+    align-items: center;
     justify-content: space-between;
-    padding: 20px 60px;
+    padding: 20px 0; /* Padding inside container removed, handled by margin auto */
     margin-bottom: 0;
     z-index: 10;
     gap: 20px;
@@ -1202,10 +1203,10 @@ body {
   /* ROW 2: Boy (left) + Simulator (right) */
   .hero__imagery {
     flex: 1;
-    position: relative;
     overflow: visible;
     display: block;
-    margin: 0;
+    /* margin: 0 auto inherits from above */
+    z-index: 1;
   }
 
   .hero__image-boy {
@@ -1213,7 +1214,7 @@ body {
     width: auto;
     height: 135%;
     max-width: none;
-    left: 5%;
+    left: 2%; /* Moved left from 5% */
     bottom: -10px;
     top: auto;
     transform: none;
@@ -1226,7 +1227,7 @@ body {
     width: 600px;
     height: auto;
     max-width: none;
-    left: 22%; /* Significant overlap with boy */
+    left: 18%; /* Significant overlap with boy, moved further left from 22% */
     top: 50%;
     transform: translateY(-50%);
     z-index: 4;
@@ -1242,7 +1243,7 @@ body {
     height: 420px;
     border: 2px solid rgba(0, 153, 255, 0.2);
     border-radius: 50%;
-    left: 24%; /* Shifted with simulator */
+    left: 20%; /* Shifted with simulator from 24% */
     top: 50%;
     transform: translateY(-50%);
     box-shadow: 0 0 40px rgba(0, 153, 255, 0.1);
@@ -1256,7 +1257,7 @@ body {
     width: 500px;
     height: 500px;
     background: radial-gradient(circle, rgba(0, 153, 255, 0.1) 0%, transparent 75%);
-    left: 19%; /* Shifted with simulator */
+    left: 15%; /* Shifted with simulator from 19% */
     top: 50%;
     transform: translateY(-50%);
     z-index: 2;
@@ -1281,8 +1282,8 @@ body {
   /* Floating CTA Card on the Right */
   .hero__cta {
     position: absolute;
-    right: 40px;
-    top: 58%; /* Moved lower from 50% */
+    right: 0; /* Perfectly aligned to the 1200px container edge */
+    top: 58%;
     transform: translateY(-50%);
     background: rgba(255, 255, 255, 0.06);
     backdrop-filter: blur(25px);

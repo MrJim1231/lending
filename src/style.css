@@ -33,7 +33,7 @@ body {
 }
 
 /* Hero Section Styles */
-.hero, .footer {
+.hero {
   position: relative;
   width: 100%;
   height: 100vh;
@@ -49,10 +49,7 @@ body {
   overflow: hidden;
 }
 
-/* Footer specific override so it always expands to cover the full viewport */
-.footer {
-  height: 100vh;
-}
+
 
 /* Header & Title */
 .hero__header {
@@ -1014,4 +1011,46 @@ body {
 
 .form-submit-btn {
   margin-top: 15px;
+}
+
+/* --- FOOTER SECTION --- */
+.footer {
+  background-color: #050a17;
+  padding: 20px 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  scroll-snap-align: end;
+  scroll-snap-stop: always;
+}
+
+.footer__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+}
+
+.footer__copy {
+  font-size: 11px;
+  color: #777;
+}
+
+.footer__links {
+  display: flex;
+  gap: 15px;
+}
+
+.footer__link {
+  font-size: 10px;
+  color: #929ba8;
+  text-decoration: none;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.2);
+}
+
+.footer__link:hover {
+  color: var(--primary-yellow);
+  border-color: var(--primary-yellow);
 }

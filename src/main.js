@@ -1,4 +1,5 @@
 import './style.css'
+import '@fortawesome/fontawesome-free/css/all.min.css'
 
 document.addEventListener('DOMContentLoaded', () => {
   // Smooth scroll to the order form

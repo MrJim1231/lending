@@ -233,6 +233,100 @@
         </div>
       </section>
 
+      <!-- ЕКРАН 7: ФУТЕР (ДУБЛЬ 1 ЕКРАНУ) -->
+      <section class="hero">
+        <div class="hero__header">
+          <div class="hero__title">
+              <span class="hero__title-small">МУЗИКАЛЬНИЙ</span>
+              <h1 class="hero__title-big">ТРЕНАЖЕР ДЛЯ БОКСУ</h1>
+          </div>
+          <div class="hero__badge-row">
+              <div class="hero__badge-yellow">НАВЧАЙСЯ РЕАКЦІЇ ВДОМА!</div>
+              <div class="hero__badge-bluetooth">
+                  <img src="/bluetooth-icon.svg" alt="Bluetooth" />
+                  <span>BLUETOOTH<br/>МУЗИКА</span>
+              </div>
+          </div>
+        </div>
+    
+        <div class="hero__imagery">
+            <img src="/simulator.png" class="hero__image-simulator" alt="Boxing Simulator" />
+            <img src="/boy2.png" class="hero__image-boy" alt="Boxing Boy" />
+            <div class="hero__badge-gloves">
+                <img src="/gloves.png" alt="Gloves" />
+                <div class="hero__badge-gloves-text">
+                    <span>РУКАВИЧКИ</span>
+                    <span class="yellow">В ПОДАРУНОК</span>
+                </div>
+            </div>
+        </div>
+    
+        <div class="hero__cta">
+            <div class="hero__timer">
+                <span class="hero__timer-label">До кінця акції залишилось:</span>
+                <div class="hero__timer-clock">
+                    <div class="timer-item"><span>00</span><small>год</small></div>
+                    <div class="timer-divider">:</div>
+                    <div class="timer-item"><span>29</span><small>хв</small></div>
+                    <div class="timer-divider">:</div>
+                    <div class="timer-item"><span>59</span><small>сек</small></div>
+                </div>
+            </div>
+
+            <div class="hero__price">
+                <div class="price-old">2000 <span>грн</span></div>
+                <div class="price-new">1000 <span>грн</span></div>
+            </div>
+
+            <button class="hero__btn">
+                ЗАМОВИТИ ЗІ ЗНИЖКОЮ
+            </button>
+        </div>
+      </section>
+
+      <!-- ЕКРАН 8: ФОРМА ЗАМОВЛЕННЯ -->
+      <section class="order-section" id="order-form">
+        <header class="specs-header">
+          <h2 class="title-white">ОФОРМЛЕННЯ </h2>
+          <h2 class="title-yellow">ЗАМОВЛЕННЯ</h2>
+        </header>
+        
+        <form class="order-form">
+          <div class="form-group">
+            <label>Ваше ім'я</label>
+            <input type="text" placeholder="Введіть ім'я..." required>
+          </div>
+          <div class="form-group">
+            <label>Ваше прізвище</label>
+            <input type="text" placeholder="Введіть прізвище..." required>
+          </div>
+          <div class="form-group">
+            <label>Номер телефону</label>
+            <input type="tel" placeholder="+38 (0XX) XXX-XX-XX" required>
+          </div>
+          <div class="form-group">
+            <label>Адреса доставки (напр. Київ, від-ня НП №15)</label>
+            <textarea placeholder="Вкажіть місто та номер відділення..." rows="2" required></textarea>
+          </div>
+          
+          <div class="form-group options-group">
+            <label>Спосіб оплати</label>
+            <div class="radio-wrap">
+              <input type="radio" id="pay-cod" name="payment" value="cod" checked>
+              <label for="pay-cod">Накладений платіж (при отриманні)</label>
+            </div>
+            <div class="radio-wrap">
+              <input type="radio" id="pay-card" name="payment" value="card">
+              <label for="pay-card">Повна передоплата на карту</label>
+            </div>
+          </div>
+          
+          <button type="submit" class="hero__btn form-submit-btn">
+             ПІДТВЕРДИТИ ЗАМОВЛЕННЯ
+          </button>
+        </form>
+      </section>
+
     </div>
     <script type="module" src="/src/main.js"></script>
   </body>

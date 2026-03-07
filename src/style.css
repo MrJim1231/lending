@@ -829,3 +829,142 @@ body {
   text-transform: uppercase;
   font-weight: 700;
 }
+
+/* --- ORDER FORM SECTION --- */
+.order-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  padding: 15px 15px 25px;
+  background-color: var(--bg-deep-blue);
+  background-image: url('/first-bg.png');
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.order-section::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(10, 20, 47, 0.85); /* deep blue transparent overlay */
+  z-index: 1;
+}
+
+.order-section .specs-header,
+.order-section .order-form {
+  position: relative;
+  z-index: 5;
+  width: 100%;
+  max-width: 400px;
+}
+
+.order-form {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-size: 12px;
+  color: #fff;
+  font-weight: 700;
+  margin-left: 2px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="tel"],
+.form-group textarea {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  padding: 12px;
+  color: #fff;
+  font-family: var(--font-main);
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--primary-yellow);
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+.options-group {
+  margin-top: 5px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 15px;
+}
+
+.radio-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 5px;
+}
+
+.radio-wrap input[type="radio"] {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  outline: none;
+  position: relative;
+  cursor: pointer;
+}
+
+.radio-wrap input[type="radio"]:checked {
+  border-color: var(--primary-yellow);
+}
+
+.radio-wrap input[type="radio"]:checked::after {
+  content: '';
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px; height: 10px;
+  background: var(--primary-yellow);
+  border-radius: 50%;
+}
+
+.radio-wrap label {
+  font-size: 13px;
+  color: #d1d8e0;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.form-submit-btn {
+  margin-top: 15px;
+}

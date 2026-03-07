@@ -1538,7 +1538,7 @@ body {
     flex-direction: column;
     justify-content: center;
     padding: 80px 0; 
-    background-image: url('/bg-desktop.png'); 
+    background-image: url('../assets/images/bg-desktop.png'); 
     background-size: cover;
     background-position: center;
     position: relative;
@@ -1756,7 +1756,7 @@ body {
 
   /* Promo Bottom Desktop */
   .promo-bottom {
-    background-image: url('/bg-desktop.png');
+    background-image: url('../assets/images/bg-desktop.png');
     height: 100vh; /* Strictly 100vh */
     max-height: 100vh;
     display: flex;

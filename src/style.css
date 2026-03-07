@@ -1166,10 +1166,11 @@ body {
 
   /* ROW 1: Title + badges */
   .hero__header {
+    display: flex;
     flex-direction: row;
-    align-items: flex-end;
+    align-items: center; /* Ensures title and badges are on the same horizontal level */
     justify-content: space-between;
-    padding: 30px 40px 20px;
+    padding: 20px 60px;
     margin-bottom: 0;
     z-index: 10;
     gap: 20px;
@@ -1181,10 +1182,22 @@ body {
 
   .hero__badge-row {
     margin-top: 0;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 10px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end; /* Push badges to the far right */
+    gap: 15px;
   }
+
+  .hero__badge-yellow, 
+  .hero__badge-bluetooth {
+    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+    flex-shrink: 0;
+  }
+
+  .hero__badge-yellow { padding: 8px 16px; font-size: 13px; }
+  .hero__badge-bluetooth { padding: 10px 18px; border-radius: 15px; }
+  .hero__badge-bluetooth span { font-size: 12px; }
+  .hero__badge-bluetooth .hero__bluetooth-icon { font-size: 24px; }
 
   /* ROW 2: Boy (left) + Simulator (right) */
   .hero__imagery {

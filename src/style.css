@@ -558,7 +558,7 @@ body {
   height: 100vh;
   scroll-snap-align: start;
   scroll-snap-stop: always;
-  padding: 15px 15px 25px; /* Reduced vertical padding, added bottom safe space */
+  padding: 40px 15px 25px; /* Increased top padding to prevent sticking to top */
   background-color: var(--bg-deep-blue);
   background-image: url('/first-bg.png');
   background-size: cover;
@@ -726,19 +726,19 @@ body {
 .work-steps {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 10px; /* Reduced gap from 15px */
   width: 100%;
 }
 
 .work-step {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 12px; /* Reduced gap from 15px */
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 12px;
-  padding: 12px 15px;
+  padding: 8px 12px; /* Reduced padding from 12px 15px */
   box-shadow: 0 4px 15px rgba(0,0,0,0.3);
 }
 
@@ -748,15 +748,15 @@ body {
 }
 
 .step-number {
-  width: 45px;
-  height: 45px;
+  width: 38px; /* Reduced from 45px */
+  height: 38px; /* Reduced from 45px */
   background: var(--primary-yellow);
   color: var(--text-black);
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 20px;
+  font-size: 18px; /* Slightly smaller font */
   font-weight: 900;
   flex-shrink: 0;
   box-shadow: 0 0 15px rgba(255, 230, 0, 0.4);
@@ -789,12 +789,12 @@ body {
 }
 
 .work-img {
-  width: 90%;
-  max-width: 300px;
+  width: 80%; /* Reduced from 90% */
+  max-width: 240px; /* Reduced from 300px */
   border-radius: 16px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
-  margin-bottom: 10px;
+  margin-bottom: 5px; /* Reduced from 10px */
 }
 
 /* --- REVIEWS SECTION --- */
@@ -903,7 +903,7 @@ body {
   height: 100vh;
   scroll-snap-align: start;
   scroll-snap-stop: always;
-  padding: 15px 15px 25px;
+  padding: 10px 15px; /* Minimal padding */
   background-color: var(--bg-deep-blue);
   background-image: url('/first-bg.png');
   background-size: cover;
@@ -936,11 +936,11 @@ body {
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 16px;
-  padding: 20px;
+  padding: 12px 15px; /* Compact padding */
   box-shadow: 0 10px 30px rgba(0,0,0,0.5);
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 8px; /* Reduced gap from 12px */
 }
 
 .form-group {
@@ -950,7 +950,7 @@ body {
 }
 
 .form-group label {
-  font-size: 12px;
+  font-size: 11px; /* Smaller label */
   color: #fff;
   font-weight: 700;
   margin-left: 2px;
@@ -963,10 +963,10 @@ body {
   background: rgba(0, 0, 0, 0.2);
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 8px;
-  padding: 12px;
+  padding: 10px; /* Reduced from 12px */
   color: #fff;
   font-family: var(--font-main);
-  font-size: 14px;
+  font-size: 13px; /* Reduced from 14px */
   outline: none;
   transition: border-color 0.2s;
 }
@@ -987,16 +987,16 @@ body {
 }
 
 .options-group {
-  margin-top: 5px;
+  margin-top: 2px;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
-  padding-top: 15px;
+  padding-top: 8px; /* Reduced from 15px */
 }
 
 .radio-wrap {
   display: flex;
   align-items: center;
   gap: 10px;
-  margin-top: 5px;
+  margin-top: 2px;
 }
 
 .radio-wrap input[type="radio"] {

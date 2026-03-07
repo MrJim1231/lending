@@ -14,6 +14,11 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: var(--font-main);
   background-color: var(--bg-deep-blue);
@@ -33,6 +38,8 @@ body {
   width: 100%;
   height: 100vh;
   height: 100svh;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
   background-image: url('/first-bg.png');
   background-size: cover;
   background-position: center;
@@ -290,6 +297,8 @@ body {
   position: relative;
   width: 100%;
   height: 100vh;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
   padding: 40px 10px 80px;
   background-size: cover;
   background-position: center;
@@ -484,6 +493,8 @@ body {
   position: relative;
   width: 100%;
   height: 100vh;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
   padding: 15px 15px 25px; /* Reduced vertical padding, added bottom safe space */
   background-color: var(--bg-deep-blue);
   background-image: url('/first-bg.png');

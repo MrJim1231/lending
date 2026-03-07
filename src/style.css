@@ -151,10 +151,10 @@ body {
 
 .hero__image-boy {
     position: absolute;
-    width: 80%;
+    width: 105%;
     /* max-width: 180px; */
     left: -17%;
-    top: -44px;
+    top: -20px;
     z-index: 3;
     filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.5));
 }
@@ -1151,6 +1151,8 @@ body {
     height: 100vh;
     height: 100dvh;
     gap: 0;
+    background-image: url('/bg-desktop.png');
+    overflow: visible; /* Prevent clipping of large elements like the boy */
   }
 
   /* All rows centered and capped at 1200px */
@@ -1188,7 +1190,7 @@ body {
   .hero__imagery {
     flex: 1;
     position: relative;
-    overflow: hidden;
+    overflow: visible;
     display: block;
     margin: 0;
   }
@@ -1196,14 +1198,14 @@ body {
   .hero__image-boy {
     position: absolute;
     width: auto;
-    height: 105%;
+    height: 180%;
     max-width: none;
-    left: 0;
-    bottom: 0;
+    left: 5%;
+    bottom: -10%;
     top: auto;
     transform: none;
     z-index: 3;
-    filter: none !important;
+    filter: drop-shadow(0 20px 40px rgba(0,0,0,0.6)) !important;
   }
 
   /* Simulator — anchored to right side */

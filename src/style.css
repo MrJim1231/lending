@@ -1148,11 +1148,11 @@ body {
     align-items: center;
     justify-content: flex-start;
     padding: 0;
-    height: 100vh;
-    height: 100dvh;
+    min-height: 100vh; /* Changed from fixed height */
+    height: auto;
     gap: 0;
     background-image: url('/bg-desktop.png');
-    overflow: hidden; /* Strictly keep all elements within the first screen */
+    overflow: hidden; 
   }
 
   /* All rows centered and capped at 1200px */
@@ -1212,22 +1212,22 @@ body {
   .hero__image-boy {
     position: absolute;
     width: auto;
-    height: 135%;
+    height: 680px; /* Fixed height instead of % to stop scaling on zoom */
     max-width: none;
-    left: 2%; /* Moved left from 5% */
-    bottom: -10px;
+    left: 0;
+    bottom: -5px;
     top: auto;
     transform: none;
-    z-index: 5; /* Now on top of the simulator */
+    z-index: 5;
     filter: drop-shadow(0 20px 40px rgba(0,0,0,0.6)) !important;
   }
 
   .hero__image-simulator {
     position: absolute;
-    width: 600px;
+    width: 620px; /* Max optimal size */
     height: auto;
     max-width: none;
-    left: 18%; /* Significant overlap with boy, moved further left from 22% */
+    left: 15%; /* Closer to boy */
     top: 50%;
     transform: translateY(-50%);
     z-index: 4;
@@ -1239,11 +1239,11 @@ body {
   .hero__imagery::before {
     content: '';
     position: absolute;
-    width: 420px;
-    height: 420px;
+    width: 450px;
+    height: 450px;
     border: 2px solid rgba(0, 153, 255, 0.2);
     border-radius: 50%;
-    left: 20%; /* Shifted with simulator from 24% */
+    left: 18%; 
     top: 50%;
     transform: translateY(-50%);
     box-shadow: 0 0 40px rgba(0, 153, 255, 0.1);
@@ -1254,10 +1254,10 @@ body {
   .hero__imagery::after {
     content: '';
     position: absolute;
-    width: 500px;
-    height: 500px;
+    width: 550px;
+    height: 550px;
     background: radial-gradient(circle, rgba(0, 153, 255, 0.1) 0%, transparent 75%);
-    left: 15%; /* Shifted with simulator from 19% */
+    left: 13%; 
     top: 50%;
     transform: translateY(-50%);
     z-index: 2;
@@ -1353,46 +1353,129 @@ body {
   .hero__btn:hover { transform: scale(1.04); }
 
   /* --- ADVANTAGES (Screen 2) --- */
-  .adv-section { padding: 60px 80px; }
-
-  .title-white  { font-size: 30px; }
-  .title-yellow { font-size: 36px; }
-
-  .adv-container {
+  .adv-section { 
+    min-height: 100vh;
     height: auto;
-    gap: 40px;
-    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 0; 
+    background-image: url('/bg-desktop.png'); 
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
   }
 
-  .adv-list { width: 40%; gap: 25px; }
+  /* Overlay to match other screens */
+  .adv-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(10, 20, 47, 0.7);
+    z-index: 1;
+  }
 
-  .adv-v3 .text-wrap h4 { font-size: 15px; }
-  .adv-v3 .text-wrap p  { font-size: 13px; }
+  .adv-header { 
+    position: relative;
+    z-index: 10;
+    max-width: 1200px;
+    margin: 0 auto 50px; 
+    width: 100%;
+    text-align: left; /* Align with container */
+  }
+
+  .title-white  { font-size: 38px; line-height: 1.1; }
+  .title-yellow { font-size: 44px; line-height: 1.1; }
+  .badge-white  { font-size: 14px; padding: 8px 20px; }
+
+  .adv-container {
+    position: relative;
+    z-index: 10;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0;
+  }
+
+  .adv-list { 
+    width: 45%; 
+    gap: 30px; 
+  }
+
+  .adv-v3 .adv-item {
+    padding: 15px 25px;
+    border-left-width: 4px;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(5px);
+    transition: transform 0.3s ease;
+  }
+  .adv-v3 .adv-item:hover {
+    transform: translateX(10px);
+    background: rgba(255, 255, 255, 0.06);
+  }
+
+  .adv-v3 .text-wrap h4 { font-size: 18px; margin-bottom: 6px; }
+  .adv-v3 .text-wrap p  { font-size: 14px; opacity: 0.8; }
 
   .adv-visuals {
     position: relative;
-    right: unset;
-    width: 55%;
-    height: 500px;
+    width: 50%;
+    height: 600px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    right: 0;
+    top: 0;
   }
 
   .sim-img {
-    width: 100%;
-    max-width: 500px;
-    top: -40px;
-    right: 0;
+    width: auto;
+    height: 120%;
+    max-width: none;
+    position: absolute;
+    top: 50%;
+    left: 45%;
+    transform: translate(-50%, -50%);
+    filter: drop-shadow(0 0 50px rgba(0, 153, 255, 0.3));
   }
 
-  .adv-gift { bottom: 20px; right: 20px; width: 180px; }
+  .adv-gift { 
+    bottom: 0px; 
+    right: 0px; 
+    width: 240px; 
+    padding: 25px;
+    border-radius: 30px;
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .adv-gift .gift-img { width: 120px; }
+  .gift-info h5 { font-size: 18px; }
+  .gift-info p { font-size: 13px; }
 
   /* --- SPECS (Screens 3 & 4) --- */
-  .specs-section { padding: 60px 80px; }
+  .specs-section { 
+    min-height: 100vh;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 0; 
+  }
+
+  .specs-header { margin-bottom: 40px; }
 
   .specs-container {
     flex-direction: row;
     align-items: center;
-    gap: 40px;
-    max-width: 1100px;
+    gap: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
   }
 
   .specs-visuals { flex: 1; }
@@ -1426,11 +1509,27 @@ body {
   .work-img    { max-width: 420px; }
 
   /* --- VIDEO (Screen 5) --- */
-  .video-section { padding: 60px 80px; min-height: 100vh; }
-  .video-wrapper { max-width: 800px; height: 65vh; }
+  .video-section { 
+    min-height: 100vh;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 0; 
+  }
+  .video-wrapper { max-width: 900px; height: 60vh; }
 
   /* --- REVIEWS (Screen 7) --- */
-  .reviews-section { padding: 60px 80px; min-height: auto; }
+  .reviews-section { 
+    min-height: 100vh;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 0; 
+  }
 
   .reviews-slider {
     flex-direction: row;
@@ -1477,14 +1576,13 @@ body {
     padding: 14px;
   }
 
-  /* Hero copy (Screen 7 bottom CTA) */
+  /* Hero copy (Screen 7 bottom CTA) should match screen 1 */
   .hero--bottom {
-    flex-direction: row;
-    align-items: center;
-    gap: 40px;
-    padding: 40px 80px;
-    height: auto;
+    background-image: url('/bg-desktop.png');
     min-height: 100vh;
+    height: auto;
+    position: relative;
+    overflow: hidden;
   }
 
 }

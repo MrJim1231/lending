@@ -1282,7 +1282,8 @@ body {
   .hero__cta {
     position: absolute;
     right: 40px;
-    top: 215px; /* Fits mockup spacing */
+    top: 58%; /* Moved lower from 50% */
+    transform: translateY(-50%);
     background: rgba(255, 255, 255, 0.06);
     backdrop-filter: blur(25px);
     border: 1px solid rgba(255, 255, 255, 0.2);
@@ -1444,11 +1445,23 @@ body {
   }
 
   /* --- ORDER FORM (Screen 8) --- */
-  .order-section { padding: 60px 40px; }
+  .order-section { 
+    padding: 40px; 
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 
-  .order-section .specs-header,
+  .order-section .specs-header {
+    max-width: 600px;
+    width: 100%;
+  }
+
   .order-section .order-form {
     max-width: 600px;
+    width: 100%;
   }
 
   .order-form {

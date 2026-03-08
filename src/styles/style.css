@@ -181,9 +181,9 @@ body {
 
 .hero__image-boy {
     position: absolute;
-    width: 80%;
-    left: -15%;
-    top: -25px;
+    width: 65%;
+    left: -10%;
+    top: 10px;
     z-index: 3;
     filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.5));
 }

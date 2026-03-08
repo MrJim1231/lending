@@ -17,7 +17,7 @@ async function optimizeAvif() {
             const statsBefore = fs.statSync(filePath);
             
             await sharp(filePath)
-                .avif({ quality: 50 })
+                .avif({ quality: 40 })
                 .toFile(tempPath);
             
             const statsAfter = fs.statSync(tempPath);
@@ -28,7 +28,7 @@ async function optimizeAvif() {
             console.log(`Optimized: ${file} | ${(statsBefore.size / 1024).toFixed(1)}KB -> ${(statsAfter.size / 1024).toFixed(1)}KB`);
         }
         
-        console.log('All AVIF files have been optimized to 75% quality.');
+        console.log('All AVIF files have been optimized to 40% quality.');
     } catch (err) {
         console.error('Error during optimization:', err);
     }

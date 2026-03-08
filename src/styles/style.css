@@ -81,6 +81,10 @@ body {
 .hero__header {
   z-index: 10;
   margin-bottom: 20px;
+  width: 100%;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .hero__title {
@@ -178,7 +182,7 @@ body {
 .hero__image-boy {
     position: absolute;
     width: 80%;
-    left: -10%;
+    left: -15%;
     top: -25px;
     z-index: 3;
     filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.5));
@@ -252,6 +256,8 @@ body {
   background: linear-gradient(to top, rgba(10, 20, 47, 0.95), transparent);
   padding: 20px 16px 35px;
   text-align: center;
+  max-width: 400px;
+  margin: 0 auto;
 }
 
 .hero__timer {

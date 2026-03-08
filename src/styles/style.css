@@ -66,7 +66,7 @@ body {
   height: 100svh;
   scroll-snap-align: start;
   scroll-snap-stop: always;
-  background-image: url('../assets/images/bg-mobile.png');
+  background-image: url('../assets/images/bg-mobile.webp');
   background-size: cover;
   background-position: center;
   display: flex;
@@ -518,7 +518,7 @@ body {
 }
 
 /* --- CHOSEN VARIANT (CLEAN LINES + GLASSMORPHISM GIFT) --- */
-.adv-v3 { background-image: url('../assets/images/bg-mobile.png'); filter: contrast(1.05); }
+.adv-v3 { background-image: url('../assets/images/bg-mobile.webp'); filter: contrast(1.05); }
 .adv-v3::before { content: ''; position: absolute; inset: 0; background: rgba(0, 0, 0, 0.6); }
 
 .adv-v3 .adv-list { gap: 20px; }
@@ -550,7 +550,7 @@ body {
   scroll-snap-stop: always;
   padding: 15px 15px 25px;
   background-color: var(--bg-deep-blue);
-  background-image: url('../assets/images/bg-mobile.png');
+  background-image: url('../assets/images/bg-mobile.webp');
   background-size: cover;
   background-position: center;
   overflow: hidden;
@@ -606,7 +606,7 @@ body {
   scroll-snap-stop: always;
   padding: 40px 15px 25px; /* Increased top padding to prevent sticking to top */
   background-color: var(--bg-deep-blue);
-  background-image: url('../assets/images/bg-mobile.png');
+  background-image: url('../assets/images/bg-mobile.webp');
   background-size: cover;
   background-position: center;
   overflow: hidden;
@@ -951,7 +951,7 @@ body {
   scroll-snap-stop: always;
   padding: 10px 15px; /* Minimal padding */
   background-color: var(--bg-deep-blue);
-  background-image: url('../assets/images/bg-mobile.png');
+  background-image: url('../assets/images/bg-mobile.webp');
   background-size: cover;
   background-position: center;
   overflow: hidden;
@@ -1172,7 +1172,7 @@ body {
   height: 100vh;
   scroll-snap-align: start;
   scroll-snap-stop: always;
-  background-image: url('../assets/images/bg-mobile.png');
+  background-image: url('../assets/images/bg-mobile.webp');
   background-size: cover;
   background-position: center;
   display: flex;
@@ -1332,7 +1332,7 @@ body {
     min-height: 100vh; /* Changed from fixed height */
     height: auto;
     gap: 0;
-    background-image: url('../assets/images/bg-desktop.png');
+    background-image: url('../assets/images/bg-desktop.webp');
     overflow: hidden; 
   }
 
@@ -1538,7 +1538,7 @@ body {
     flex-direction: column;
     justify-content: center;
     padding: 80px 0; 
-    background-image: url('../assets/images/bg-desktop.png'); 
+    background-image: url('../assets/images/bg-desktop.webp'); 
     background-size: cover;
     background-position: center;
     position: relative;
@@ -1756,7 +1756,7 @@ body {
 
   /* Promo Bottom Desktop */
   .promo-bottom {
-    background-image: url('../assets/images/bg-desktop.png');
+    background-image: url('../assets/images/bg-desktop.webp');
     height: 100vh; /* Strictly 100vh */
     max-height: 100vh;
     display: flex;

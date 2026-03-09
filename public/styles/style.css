@@ -13,9 +13,17 @@
   box-sizing: border-box;
 }
 
-html {
-  scroll-snap-type: y mandatory;
-  scroll-behavior: smooth;
+@media (max-width: 1023px) {
+  html {
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+  }
+}
+
+@media (min-width: 1024px) {
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
 body {
@@ -32,13 +40,25 @@ body {
 }
 
 /* Hero Section Styles */
+@media (max-width: 1023px) {
+  .hero {
+    height: 100vh;
+    height: 100svh;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+  }
+}
+@media (min-width: 1024px) {
+  .hero {
+    height: auto;
+    min-height: 100vh;
+    scroll-snap-align: unset;
+  }
+}
 .hero {
   position: relative;
   width: 100%;
-  height: 100vh;
-  height: 100svh;
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
+  overflow: hidden;
   background-image: url('../assets/images/bg-mobile.avif');
   background-size: cover;
   background-position: center;
@@ -1294,11 +1314,14 @@ body {
   .adv-section,
   .specs-section,
   .video-section,
-  .order-section {
+  .order-section,
+  .promo-bottom,
+  .footer {
     scroll-snap-align: unset;
     scroll-snap-stop: unset;
     height: auto;
     min-height: 100vh;
+    overflow: hidden;
   }
 
   /* === HERO DESKTOP: 1200px container, 3 rows === */
@@ -1735,8 +1758,8 @@ body {
   /* Promo Bottom Desktop */
   .promo-bottom {
     background-image: url('../assets/images/bg-desktop.avif');
-    height: 100vh; /* Strictly 100vh */
-    max-height: 100vh;
+    height: auto; /* Changed from 100vh */
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;

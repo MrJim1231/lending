@@ -1,89 +1,107 @@
-import './styles/style.css'
-
 function initScroll() {
   const orderButtons = document.querySelectorAll('.scroll-to-order');
   const orderForm = document.getElementById('order-form');
 
-  if (orderButtons.length > 0 && orderForm) {
-    orderButtons.forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        e.preventDefault();
-        orderForm.scrollIntoView({ behavior: 'smooth' });
-      });
+  if (!orderButtons.length || !orderForm) return;
+
+  const handleScrollClick = (event) => {
+    event.preventDefault();
+    orderForm.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
     });
-  }
+  };
+
+  orderButtons.forEach((button) => {
+    button.addEventListener('click', handleScrollClick);
+  });
 }
 
 function initTimer() {
-  const TIMER_DURATION = 29 * 60 + 59; // 29:59 в секундах
+  const TIMER_DURATION = 29 * 60 + 59;
   const TIMER_KEY = 'promo_timer_end';
 
-  let endTime = localStorage.getItem(TIMER_KEY);
-  if (!endTime) {
+  let endTime = Number(localStorage.getItem(TIMER_KEY));
+
+  if (!endTime || Number.isNaN(endTime) || endTime < Date.now()) {
     endTime = Date.now() + TIMER_DURATION * 1000;
-    localStorage.setItem(TIMER_KEY, endTime);
+    localStorage.setItem(TIMER_KEY, String(endTime));
   }
-  endTime = parseInt(endTime);
 
-  const pad = (n) => String(n).padStart(2, '0');
+  const timers = [
+    {
+      hours: document.getElementById('t1-hours'),
+      minutes: document.getElementById('t1-minutes'),
+      seconds: document.getElementById('t1-seconds'),
+    },
+    {
+      hours: document.getElementById('t2-hours'),
+      minutes: document.getElementById('t2-minutes'),
+      seconds: document.getElementById('t2-seconds'),
+    },
+  ];
 
-  function updateTimers() {
-    const remaining = Math.max(0, Math.floor((endTime - Date.now()) / 1000));
-    const h = Math.floor(remaining / 3600);
-    const m = Math.floor((remaining % 3600) / 60);
-    const s = remaining % 60;
+  const hasTimerElements = timers.some(
+    (timer) => timer.hours || timer.minutes || timer.seconds
+  );
 
-    ['t1', 't2'].forEach(prefix => {
-      const elH = document.getElementById(`${prefix}-hours`);
-      const elM = document.getElementById(`${prefix}-minutes`);
-      const elS = document.getElementById(`${prefix}-seconds`);
-      if (elH) elH.textContent = pad(h);
-      if (elM) elM.textContent = pad(m);
-      if (elS) elS.textContent = pad(s);
-    });
+  if (!hasTimerElements) return;
 
-    if (remaining > 0) {
-      setTimeout(updateTimers, 1000);
-    } else {
+  const pad = (value) => String(value).padStart(2, '0');
+
+  const updateTimers = () => {
+    let remaining = Math.max(0, Math.floor((endTime - Date.now()) / 1000));
+
+    if (remaining === 0) {
       endTime = Date.now() + TIMER_DURATION * 1000;
-      localStorage.setItem(TIMER_KEY, endTime);
-      setTimeout(updateTimers, 1000);
+      localStorage.setItem(TIMER_KEY, String(endTime));
+      remaining = TIMER_DURATION;
     }
-  }
+
+    const hours = Math.floor(remaining / 3600);
+    const minutes = Math.floor((remaining % 3600) / 60);
+    const seconds = remaining % 60;
+
+    timers.forEach((timer) => {
+      if (timer.hours) timer.hours.textContent = pad(hours);
+      if (timer.minutes) timer.minutes.textContent = pad(minutes);
+      if (timer.seconds) timer.seconds.textContent = pad(seconds);
+    });
+  };
 
   updateTimers();
+  setInterval(updateTimers, 1000);
 }
 
 function initVideo() {
   const promoVideo = document.getElementById('promo-video');
   const videoSection = document.querySelector('.video-section');
 
-  if (promoVideo && videoSection) {
-    promoVideo.volume = 0.3;
+  if (!promoVideo || !videoSection || !('IntersectionObserver' in window)) return;
 
-    const videoObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
+  promoVideo.volume = 0.3;
+  promoVideo.preload = 'none';
+
+  const videoObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          const playPromise = promoVideo.play();
-          if (playPromise !== undefined) {
-            playPromise.catch(error => {
-              console.log("Автовідтворення заблоковано браузером, очікуємо кліку клієнта.", error);
-            });
-          }
+          promoVideo.play().catch(() => {
+            // Автовоспроизведение может быть заблокировано браузером
+          });
         } else {
           promoVideo.pause();
         }
       });
-    }, {
-      threshold: 0.5
-    });
+    },
+    {
+      threshold: 0.5,
+    }
+  );
 
-    videoObserver.observe(videoSection);
-  }
+  videoObserver.observe(videoSection);
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  initScroll();
-  initTimer();
-  initVideo();
-});
+initScroll();
+initTimer();
+initVideo();

@@ -86,9 +86,7 @@ function initVideo() {
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          promoVideo.play().catch(() => {
-            // Автовоспроизведение может быть заблокировано браузером
-          });
+          promoVideo.play().catch(() => {});
         } else {
           promoVideo.pause();
         }
@@ -103,5 +101,11 @@ function initVideo() {
 }
 
 initScroll();
-initTimer();
-initVideo();
+
+requestAnimationFrame(() => {
+  initTimer();
+});
+
+window.addEventListener('load', () => {
+  initVideo();
+});

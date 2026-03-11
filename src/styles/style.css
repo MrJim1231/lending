@@ -479,18 +479,18 @@ body {
 }
 
 .sim-img {
-  width: 155%;
-  max-width: 350px;
+  width: 120%;
+  max-width: 280px;
   position: absolute;
-  top: -60px;
-  right: -55px; /* Push image further right, as per screenshot */
+  top: 0px;
+  right: -15px;
   filter: none;
 }
 
 /* Base Gift Block */
 .adv-gift {
   position: absolute;
-  bottom: 40px;
+  bottom: 80px;
   right: 15px;
   padding: 10px 8px;
   width: 155px;

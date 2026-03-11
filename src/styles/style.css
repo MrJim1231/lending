@@ -165,11 +165,11 @@ body {
 
 .hero__image-simulator {
   position: absolute;
-  width: 105%;
-  max-width: 320px;
+  width: 75%;
+  max-width: 240px;
   z-index: 2;
-  top: -15px; /* Moved lower from -55px */
-  right: -10%;
+  top: -15px;
+  right: -2%;
   filter: none;
 }
 

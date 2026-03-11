@@ -176,6 +176,7 @@ body {
 .hero__image-boy {
     position: absolute;
     width: 65%;
+    height: auto;
     left: -10%;
     top: 10px;
     z-index: 3;

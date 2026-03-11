@@ -449,7 +449,7 @@ body {
 .glow-y { background: var(--primary-yellow); border: 2px solid #fff; box-shadow: 0 5px 15px rgba(255,230,0,0.5); }
 .glow-b { background: #0099ff; border: 2px solid #fff; box-shadow: 0 5px 15px rgba(0,153,255,0.5); }
 
-.text-wrap h4 {
+.text-wrap h3 {
   font-size: 11px;
   font-weight: 900;
   color: #fff;
@@ -502,7 +502,7 @@ body {
   margin-top: -45px;
   filter: drop-shadow(0 0 15px var(--primary-yellow));
 }
-.gift-info h5 {
+.gift-info h3 {
   font-size: 13px;
   color: #fff;
   font-weight: 900;
@@ -531,7 +531,7 @@ body {
   align-items: center;
 }
 
-.adv-v3 .text-wrap h4 { color: var(--primary-yellow); font-size: 12px; }
+.adv-v3 .text-wrap h3 { color: var(--primary-yellow); font-size: 12px; }
 .adv-v3 .text-wrap p { font-size: 10px; }
 
 /* Gift block styling from Version 2 (Glassmorphism) */
@@ -813,7 +813,7 @@ body {
   justify-content: center;
 }
 
-.step-text h5 {
+.step-text h3 {
   font-size: 14px;
   color: #fff;
   font-weight: 900;
@@ -912,7 +912,7 @@ body {
   gap: 3px;
 }
 
-.reviewer-info h6 {
+.reviewer-info h3 {
   color: #fff;
   font-size: 14px;
   font-weight: 900;
@@ -1609,7 +1609,7 @@ body {
     background: rgba(255, 255, 255, 0.06);
   }
 
-  .adv-v3 .text-wrap h4 { font-size: 18px; margin-bottom: 6px; }
+  .adv-v3 .text-wrap h3 { font-size: 18px; margin-bottom: 6px; }
   .adv-v3 .text-wrap p  { font-size: 14px; opacity: 0.8; }
 
   .adv-visuals {
@@ -1644,7 +1644,7 @@ body {
   }
 
   .adv-gift .gift-img { width: 120px; }
-  .gift-info h5 { font-size: 18px; }
+  .gift-info h3 { font-size: 18px; }
   .gift-info p { font-size: 13px; }
 
   /* --- SPECS (Screens 3 & 4) --- */
@@ -1694,7 +1694,7 @@ body {
   .work-steps  { gap: 20px; }
   .work-step   { padding: 16px 20px; }
   .step-number { width: 55px; height: 55px; font-size: 24px; }
-  .step-text h5 { font-size: 16px; }
+  .step-text h3 { font-size: 16px; }
   .step-text p  { font-size: 13px; }
   .work-img    { max-width: 420px; }
 

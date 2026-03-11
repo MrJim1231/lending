@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="./src/assets/images/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preload" href="./src/styles/style.css" as="style">
     <link rel="stylesheet" href="./src/styles/style.css" />
     <!-- Preload LCP Images -->
     <link rel="preload" href="./src/assets/images/hero-boy-mobile.avif" as="image" type="image/avif" fetchpriority="high">
@@ -30,17 +31,17 @@
     
         <div class="hero__imagery">
             <picture>
-              <source media="(min-width: 768px)" srcset="./src/assets/images/hero-simulator-desktop.avif">
-              <img src="./src/assets/images/hero-simulator-mobile.avif" class="hero__image-simulator" alt="Boxing Simulator" fetchpriority="high" />
+              <source media="(min-width: 768px)" srcset="./src/assets/images/hero-simulator-desktop.avif" type="image/avif">
+              <img src="./src/assets/images/hero-simulator-mobile.avif" class="hero__image-simulator" alt="Boxing Simulator" fetchpriority="high" width="300" height="300" loading="eager" decoding="async" />
             </picture>
             <picture>
-              <source media="(min-width: 768px)" srcset="./src/assets/images/hero-boy-desktop.avif">
-              <img src="./src/assets/images/hero-boy-mobile.avif" class="hero__image-boy" alt="Boxing Boy" fetchpriority="high" />
+              <source media="(min-width: 768px)" srcset="./src/assets/images/hero-boy-desktop.avif" type="image/avif">
+              <img src="./src/assets/images/hero-boy-mobile.avif" class="hero__image-boy" alt="Boxing Boy" fetchpriority="high" width="320" height="480" loading="eager" decoding="async" />
             </picture>
             <div class="hero__badge-gloves">
                 <picture>
-                  <source media="(min-width: 768px)" srcset="./src/assets/images/gift-gloves-desktop.avif">
-                  <img src="./src/assets/images/gift-gloves-mobile.avif" alt="Gloves" />
+                  <source media="(min-width: 768px)" srcset="./src/assets/images/gift-gloves-desktop.avif" type="image/avif">
+                  <img src="./src/assets/images/gift-gloves-mobile.avif" alt="Gloves" width="100" height="100" loading="lazy" decoding="async" />
                 </picture>
                 <div class="hero__badge-gloves-text">
                     <span>РУКАВИЧКИ</span>
@@ -89,13 +90,13 @@
           </div>
           <div class="adv-visuals">
              <picture>
-               <source media="(min-width: 768px)" srcset="./src/assets/images/hero-simulator-desktop.avif">
-               <img src="./src/assets/images/hero-simulator-mobile.avif" class="sim-img" alt="Boxing Simulator Advantages" loading="lazy" decoding="async">
+               <source media="(min-width: 768px)" srcset="./src/assets/images/hero-simulator-desktop.avif" type="image/avif">
+               <img src="./src/assets/images/hero-simulator-mobile.avif" class="sim-img" alt="Boxing Simulator Advantages" width="300" height="300" loading="lazy" decoding="async">
              </picture>
              <div class="adv-gift">
                <picture>
-                 <source media="(min-width: 768px)" srcset="./src/assets/images/gift-gloves-desktop.avif">
-                 <img src="./src/assets/images/gift-gloves-mobile.avif" alt="Gloves" class="gift-img" loading="lazy" decoding="async">
+                 <source media="(min-width: 768px)" srcset="./src/assets/images/gift-gloves-desktop.avif" type="image/avif">
+                 <img src="./src/assets/images/gift-gloves-mobile.avif" alt="Gloves" class="gift-img" width="100" height="100" loading="lazy" decoding="async">
                </picture>
                <div class="gift-info">
                  <h3>РУКАВИЧКИ<br><span class="yellow">В ПОДАРУНОК</span></h3>
@@ -117,8 +118,8 @@
           <!-- Visual 1 -->
           <div class="specs-visuals">
             <picture>
-              <source media="(min-width: 768px)" srcset="./src/assets/images/specs-detail-1-desktop.avif">
-              <img src="./src/assets/images/specs-detail-1-mobile.avif" class="specs-img" alt="Деталі тренажера" loading="lazy" decoding="async">
+              <source media="(min-width: 768px)" srcset="./src/assets/images/specs-detail-1-desktop.avif" type="image/avif">
+              <img src="./src/assets/images/specs-detail-1-mobile.avif" class="specs-img" alt="Деталі тренажера" width="320" height="240" loading="lazy" decoding="async">
             </picture>
           </div>
           
@@ -151,8 +152,8 @@
           <!-- Visual 2 -->
           <div class="specs-visuals">
             <picture>
-              <source media="(min-width: 768px)" srcset="./src/assets/images/specs-detail-2-desktop.avif">
-              <img src="./src/assets/images/specs-detail-2-mobile.avif" class="specs-img" alt="Функції тренажера" loading="lazy" decoding="async">
+              <source media="(min-width: 768px)" srcset="./src/assets/images/specs-detail-2-desktop.avif" type="image/avif">
+              <img src="./src/assets/images/specs-detail-2-mobile.avif" class="specs-img" alt="Функції тренажера" width="320" height="240" loading="lazy" decoding="async">
             </picture>
           </div>
           
@@ -180,7 +181,7 @@
         </header>
         
         <div class="video-wrapper">
-          <video src="/video/video.mp4" id="promo-video" class="promo-video" loop playsinline controls title="Відео демонстрація тренажера" aria-label="Відео демонстрація тренажера">
+          <video data-src="/video/video.mp4" id="promo-video" class="promo-video" loop playsinline controls title="Відео демонстрація тренажера" aria-label="Відео демонстрація тренажера" poster="./src/assets/images/hero-simulator-desktop.avif" preload="none">
             <track kind="captions" label="Без звуку" src="data:text/vtt;base64,V0VCVlRUDQoNCjAwOjAwOjAwLjAwMCAtLT4gMDA6MDA6MTAuMDAwDQpEaXNhYmxlZA==" srclang="uk" default>
           </video>
         </div>
@@ -197,8 +198,8 @@
           <!-- Visual -->
           <div class="specs-visuals">
              <picture>
-               <source media="(min-width: 768px)" srcset="./src/assets/images/delivery-icon-destop.avif">
-               <img src="./src/assets/images/delivery-icon-mobile.avif" class="specs-img work-img" alt="Швидка доставка Нова Пошта / Укрпошта" loading="lazy" decoding="async">
+               <source media="(min-width: 768px)" srcset="./src/assets/images/delivery-icon-destop.avif" type="image/avif">
+               <img src="./src/assets/images/delivery-icon-mobile.avif" class="specs-img work-img" alt="Швидка доставка Нова Пошта / Укрпошта" width="320" height="240" loading="lazy" decoding="async">
              </picture>
           </div>
           

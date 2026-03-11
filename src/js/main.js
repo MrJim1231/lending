@@ -30,11 +30,15 @@ function initTimer() {
 
   const timers = [
     {
+      el: document.querySelector('.hero__timer'),
+      visible: false,
       hours: document.getElementById('t1-hours'),
       minutes: document.getElementById('t1-minutes'),
       seconds: document.getElementById('t1-seconds'),
     },
     {
+      el: document.querySelector('.promo-bottom__timer'),
+      visible: false,
       hours: document.getElementById('t2-hours'),
       minutes: document.getElementById('t2-minutes'),
       seconds: document.getElementById('t2-seconds'),
@@ -63,11 +67,34 @@ function initTimer() {
     const seconds = remaining % 60;
 
     timers.forEach((timer) => {
+      // Lazy init timer values if timer is in viewport
+      if (!timer.el) return;
+      if (!timer.visible) return;
+
       if (timer.hours) timer.hours.textContent = pad(hours);
       if (timer.minutes) timer.minutes.textContent = pad(minutes);
       if (timer.seconds) timer.seconds.textContent = pad(seconds);
     });
   };
+
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        timers.forEach(timer => {
+          if (timer.el === entry.target) {
+            timer.visible = entry.isIntersecting;
+            if (timer.visible) updateTimers(); // initial update
+          }
+        });
+      });
+    }, { rootMargin: '100px' });
+    
+    timers.forEach(timer => {
+        if(timer.el) observer.observe(timer.el);
+    });
+  } else {
+     timers.forEach(t => t.visible = true);
+  }
 
   updateTimers();
   setInterval(updateTimers, 1000);
@@ -77,15 +104,23 @@ function initVideo() {
   const promoVideo = document.getElementById('promo-video');
   const videoSection = document.querySelector('.video-section');
 
-  if (!promoVideo || !videoSection || !('IntersectionObserver' in window)) return;
+  if (!promoVideo || !videoSection) return;
 
   promoVideo.volume = 0.3;
   promoVideo.preload = 'none';
+
+  if (!('IntersectionObserver' in window)) return;
 
   const videoObserver = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
+            // Lazy load video src
+            if(promoVideo.getAttribute('data-src')){
+                promoVideo.src = promoVideo.getAttribute('data-src');
+                promoVideo.removeAttribute('data-src');
+                promoVideo.load();
+            }
           promoVideo.play().catch(() => {});
         } else {
           promoVideo.pause();
@@ -93,19 +128,30 @@ function initVideo() {
       });
     },
     {
-      threshold: 0.5,
+      threshold: 0.1,
+      rootMargin: '200px'
     }
   );
 
   videoObserver.observe(videoSection);
 }
 
+// 1. Scroll logic must work immediately
 initScroll();
 
-requestAnimationFrame(() => {
-  initTimer();
-});
+// 2. Timer and video can wait until main thread is idle
+if ('requestIdleCallback' in window) {
+  requestIdleCallback(() => {
+    initTimer();
+  });
+} else {
+  setTimeout(() => {
+    initTimer();
+  }, 100);
+}
 
+// Ensure video init runs later
 window.addEventListener('load', () => {
-  initVideo();
+    // defer slightly more
+    setTimeout(initVideo, 500);
 });

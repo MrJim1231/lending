@@ -359,6 +359,8 @@ body {
   overflow: hidden;
   font-family: inherit;
   border-bottom: 2px solid rgba(255,255,255,0.1);
+  content-visibility: auto;
+  contain-intrinsic-size: 1000px;
 }
 
 .variant-label {
@@ -616,6 +618,8 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center; /* Center content vertically within 100vh */
+  content-visibility: auto;
+  contain-intrinsic-size: 1000px;
 }
 
 /* Add a dark overlay so text is readable if the background is bright */
@@ -767,6 +771,8 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  content-visibility: auto;
+  contain-intrinsic-size: 1000px;
 }
 
 .work-steps {
@@ -848,6 +854,8 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  content-visibility: auto;
+  contain-intrinsic-size: 1000px;
 }
 
 .reviews-slider {

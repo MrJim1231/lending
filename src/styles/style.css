@@ -262,7 +262,8 @@ body {
 
 .hero__timer-label {
   font-size: 14px;
-  color: #ccc;
+  color: #ffffff;
+  opacity: 0.85;
   text-transform: uppercase;
   letter-spacing: 0.1em;
 }
@@ -311,7 +312,7 @@ body {
 .price-old {
   font-size: 20px;
   text-decoration: line-through;
-  color: #888;
+  color: #a4b0be;
   font-weight: 500;
 }
 
@@ -512,7 +513,7 @@ body {
 .gift-info .yellow { color: var(--primary-yellow); }
 .gift-info p {
   font-size: 9px;
-  color: #ccc;
+  color: #d1d8e0;
   margin-top: 5px;
 }
 
@@ -724,7 +725,7 @@ body {
 }
 
 .specs-list span {
-  color: #ccc;
+  color: #d1d8e0;
   width: 45%;
 }
 
@@ -824,7 +825,7 @@ body {
 
 .step-text p {
   font-size: 11px;
-  color: #ccc;
+  color: #d1d8e0;
   line-height: 1.3;
 }
 
@@ -935,7 +936,7 @@ body {
 
 .review-date {
   font-size: 11px;
-  color: #777;
+  color: #a4b0be;
   text-align: right;
   text-transform: uppercase;
   font-weight: 700;
@@ -1154,7 +1155,7 @@ body {
 
 .footer__copy {
   font-size: 11px;
-  color: #777;
+  color: #a4b0be;
 }
 
 .footer__links {
@@ -1164,7 +1165,7 @@ body {
 
 .footer__link {
   font-size: 10px;
-  color: #929ba8;
+  color: #a4b0be;
   text-decoration: none;
   border-bottom: 1px dashed rgba(255, 255, 255, 0.2);
 }
@@ -1290,11 +1291,11 @@ body {
 }
 
 .promo-bottom__timer { display: flex; flex-direction: column; gap: 8px; margin-bottom: 10px; }
-.promo-bottom__timer-label { font-size: 12px; color: #ccc; text-transform: uppercase; }
+.promo-bottom__timer-label { font-size: 12px; color: #ffffff; opacity: 0.85; text-transform: uppercase; }
 .promo-bottom__timer-clock { display: flex; justify-content: center; gap: 8px; }
 
 .promo-bottom__price { display: flex; justify-content: center; align-items: baseline; gap: 15px; margin-bottom: 10px; }
-.promo-bottom__price .price-old { font-size: 18px; color: #888; text-decoration: line-through; }
+.promo-bottom__price .price-old { font-size: 18px; color: #a4b0be; text-decoration: line-through; }
 .promo-bottom__price .price-new { font-size: 28px; color: var(--primary-yellow); font-weight: 900; }
 
 .promo-bottom__btn {
@@ -1500,7 +1501,7 @@ body {
     order: 1; /* First in floating CTA */
   }
 
-  .price-old { font-size: 20px; color: #ccc; opacity: 0.7; margin-bottom: 2px; }
+  .price-old { font-size: 20px; color: #a4b0be; opacity: 1; margin-bottom: 2px; }
   .price-new { 
     font-size: 60px; 
     line-height: 1; 
@@ -1517,7 +1518,7 @@ body {
     order: 2; /* Second in floating CTA */
   }
 
-  .hero__timer-label { font-size: 11px; color: #fff; opacity: 0.7; letter-spacing: 0.8px; }
+  .hero__timer-label { font-size: 11px; color: #fff; opacity: 0.9; letter-spacing: 0.8px; }
   .hero__timer-clock { gap: 10px; }
   .timer-item { 
     background: rgba(255, 255, 255, 0.08); 
@@ -1526,7 +1527,7 @@ body {
     min-width: 65px; 
   }
   .timer-item span { font-size: 26px; color: #fff; letter-spacing: 0; }
-  .timer-item small { display: block; font-size: 9px; margin-top: 2px; opacity: 0.6; }
+  .timer-item small { display: block; font-size: 9px; margin-top: 2px; opacity: 0.8; }
 
   .hero__btn {
     width: 100%;
@@ -1610,7 +1611,7 @@ body {
   }
 
   .adv-v3 .text-wrap h3 { font-size: 18px; margin-bottom: 6px; }
-  .adv-v3 .text-wrap p  { font-size: 14px; opacity: 0.8; }
+  .adv-v3 .text-wrap p  { font-size: 14px; opacity: 1; }
 
   .adv-visuals {
     position: relative;
@@ -1927,7 +1928,7 @@ body {
     order: 2; /* Second in floating CTA */
   }
 
-  .promo-bottom__timer-label { font-size: 11px; color: #fff; opacity: 0.7; letter-spacing: 0.8px; }
+  .promo-bottom__timer-label { font-size: 11px; color: #fff; opacity: 0.9; letter-spacing: 0.8px; }
   .promo-bottom__timer-clock { gap: 10px; }
 
   .promo-bottom__btn {

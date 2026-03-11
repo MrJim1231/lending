@@ -1033,8 +1033,18 @@ body {
 
 .options-group {
   margin-top: 2px;
+  border: none;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0;
   padding-top: 8px; /* Reduced from 15px */
+}
+
+.group-label {
+  font-size: 11px;
+  color: #fff;
+  font-weight: 700;
+  margin-left: 2px;
+  padding: 0;
 }
 
 .radio-wrap {

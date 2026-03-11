@@ -344,24 +344,24 @@
         
         <form class="order-form">
           <div class="form-group">
-            <label>Ваше ім'я</label>
-            <input type="text" placeholder="Введіть ім'я..." required>
+            <label for="first-name">Ваше ім'я</label>
+            <input type="text" id="first-name" name="first_name" autocomplete="given-name" placeholder="Введіть ім'я..." required>
           </div>
           <div class="form-group">
-            <label>Ваше прізвище</label>
-            <input type="text" placeholder="Введіть прізвище..." required>
+            <label for="last-name">Ваше прізвище</label>
+            <input type="text" id="last-name" name="last_name" autocomplete="family-name" placeholder="Введіть прізвище..." required>
           </div>
           <div class="form-group">
-            <label>Номер телефону</label>
-            <input type="tel" placeholder="+38 (0XX) XXX-XX-XX" required>
+            <label for="phone">Номер телефону</label>
+            <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="+38 (0XX) XXX-XX-XX" required>
           </div>
           <div class="form-group">
-            <label>Адреса доставки (напр. Київ, від-ня НП №15)</label>
-            <textarea placeholder="Вкажіть місто та номер відділення..." rows="2" required></textarea>
+            <label for="address">Адреса доставки (напр. Київ, від-ня НП №15)</label>
+            <textarea id="address" name="address" autocomplete="street-address" placeholder="Вкажіть місто та номер відділення..." rows="2" required></textarea>
           </div>
           
-          <div class="form-group options-group">
-            <label>Спосіб оплати</label>
+          <fieldset class="form-group options-group">
+            <legend class="group-label">Спосіб оплати</legend>
             <div class="radio-wrap">
               <input type="radio" id="pay-cod" name="payment" value="cod" checked>
               <label for="pay-cod">Накладений платіж (при отриманні)</label>
@@ -370,7 +370,7 @@
               <input type="radio" id="pay-card" name="payment" value="card">
               <label for="pay-card">Повна передоплата на карту</label>
             </div>
-          </div>
+          </fieldset>
           
           <div class="checkbox-wrap">
             <input type="checkbox" id="call-confirm" name="call_confirm">

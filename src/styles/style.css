@@ -502,9 +502,9 @@ body {
   z-index: 10;
 }
 .adv-gift .gift-img {
-  width: 80px;
+  /* width: 80px; */
   margin-top: -45px;
-  filter: drop-shadow(0 0 15px var(--primary-yellow));
+  /* filter: drop-shadow(0 0 15px var(--primary-yellow)); */
 }
 .gift-info h3 {
   font-size: 13px;
@@ -538,10 +538,10 @@ body {
 .adv-v3 .text-wrap h3 { color: var(--primary-yellow); font-size: 12px; }
 .adv-v3 .text-wrap p { font-size: 10px; }
 
-/* Gift block styling from Version 2 (Glassmorphism) */
+/* Gift block styling — no background */
 .adv-v3 .adv-gift {
-  background: rgba(255,255,255,0.05);
-  backdrop-filter: blur(10px);
+  background: none;
+  backdrop-filter: none;
 }
 
 /* --- VIDEO SECTION --- */

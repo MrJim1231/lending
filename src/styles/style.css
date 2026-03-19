@@ -671,9 +671,12 @@ body {
   width: 100%;
 }
 
+.specs-visuals picture {
+  width: 100%;
+}
+
 .specs-img {
-  /* max-width: 90%; */
-  /* width: 90%; */
+  width: 100%;
   border-radius: 16px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
   border: 1px solid rgba(255, 255, 255, 0.1);
